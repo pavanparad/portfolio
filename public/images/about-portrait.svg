@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 620" fill="none">
+  <defs>
+    <radialGradient id="aboutGlow" cx="45%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#C4A7FF" stop-opacity="0.35"/>
+      <stop offset="60%" stop-color="#DCCBFA" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#F5F0FA" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="aboutGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2D273A"/>
+      <stop offset="100%" stop-color="#121017"/>
+    </linearGradient>
+    <linearGradient id="screenGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#A88BEA" stop-opacity="0.4"/>
+      <stop offset="50%" stop-color="#C4A7FF" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#DCCBFA" stop-opacity="0.3"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="500" height="620" rx="16" fill="#EDE6F7"/>
+  <circle cx="240" cy="280" r="220" fill="url(#aboutGlow)"/>
+
+  <!-- Editing Suite Ambient Scene: Pavan behind studio monitor cutting frames -->
+  <!-- Monitor frame -->
+  <rect x="80" y="160" width="340" height="210" rx="8" fill="#1C1827" stroke="#A88BEA" stroke-width="2"/>
+  <!-- Screen contents (NLE Timeline preview) -->
+  <rect x="90" y="170" width="320" height="150" fill="#0E0C13"/>
+  
+  <!-- Video Preview Canvas -->
+  <rect x="130" y="180" width="160" height="90" fill="#252033" stroke="#483B60"/>
+  <!-- Playhead & Scrubber -->
+  <line x1="210" y1="180" x2="210" y2="270" stroke="#FF5376" stroke-width="2"/>
+  <polygon points="206,176 214,176 210,182" fill="#FF5376"/>
+  
+  <!-- Audio Waveform meters -->
+  <g fill="#A88BEA" opacity="0.8">
+    <rect x="305" y="195" width="4" height="25" rx="1"/>
+    <rect x="313" y="185" width="4" height="35" rx="1"/>
+    <rect x="321" y="200" width="4" height="20" rx="1"/>
+    <rect x="329" y="190" width="4" height="30" rx="1"/>
+    <rect x="337" y="182" width="4" height="38" rx="1"/>
+    <rect x="345" y="205" width="4" height="15" rx="1"/>
+  </g>
+
+  <!-- Multi-track Timeline below preview -->
+  <rect x="90" y="280" width="320" height="40" fill="#171520"/>
+  <!-- Video Track 1 -->
+  <rect x="95" y="285" width="60" height="10" rx="2" fill="#A88BEA"/>
+  <rect x="160" y="285" width="85" height="10" rx="2" fill="#8964DE"/>
+  <rect x="250" y="285" width="45" height="10" rx="2" fill="#A88BEA"/>
+  <rect x="300" y="285" width="70" height="10" rx="2" fill="#6C41CE"/>
+  <!-- Audio Track 1 -->
+  <rect x="95" y="300" width="120" height="8" rx="2" fill="#5A4780"/>
+  <rect x="220" y="300" width="100" height="8" rx="2" fill="#5A4780"/>
+  <rect x="325" y="300" width="75" height="8" rx="2" fill="#5A4780"/>
+
+  <!-- Monitor Stand -->
+  <rect x="235" y="370" width="30" height="50" fill="#2C2738"/>
+  <path d="M190 420 L310 420 L320 430 L180 430 Z" fill="#201C2B"/>
+
+  <!-- Foreground: Editor silhouette with headphones in zone -->
+  <g id="editor-silhouette">
+    <path d="M170 620 C170 500 210 460 250 450 C290 460 330 500 330 620 Z" fill="url(#aboutGrad)"/>
+    <!-- Head -->
+    <ellipse cx="250" cy="410" rx="42" ry="48" fill="#3D344B"/>
+    <!-- Studio Over-ear Headphones -->
+    <path d="M198 395 C198 360 220 340 250 340 C280 340 302 360 302 395" stroke="#FFFFFF" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <rect x="192" y="385" width="16" height="36" rx="8" fill="#A88BEA"/>
+    <rect x="292" y="385" width="16" height="36" rx="8" fill="#A88BEA"/>
+  </g>
+
+  <!-- Editorial Typography Watermark -->
+  <text x="30" y="580" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="28" fill="#17151D" opacity="0.12">BEHIND THE FRAME</text>
+  <text x="30" y="600" font-family="'JetBrains Mono', monospace" font-size="11" fill="#77717F" letter-spacing="1">MR. PAVAN CREATION • 2026</text>
+</svg>
