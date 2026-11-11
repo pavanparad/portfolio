@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 1280" fill="none">
+  <defs>
+    <radialGradient id="veloxxGlow" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#C9A45C" stop-opacity="0.3"/>
+      <stop offset="40%" stop-color="#8964DE" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#17151B" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="gridVeloxx" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#A88BEA" stroke-width="0.8" opacity="0.12"/>
+    </pattern>
+    <linearGradient id="speedRamp" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#A88BEA"/>
+      <stop offset="50%" stop-color="#C9A45C"/>
+      <stop offset="100%" stop-color="#F6F1E9"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Dark Charcoal Base -->
+  <rect width="720" height="1280" fill="#17151B"/>
+  <rect width="720" height="1280" fill="url(#gridVeloxx)"/>
+  <circle cx="360" cy="620" r="360" fill="url(#veloxxGlow)"/>
+
+  <!-- Dynamic Speed Motion Lines (Angled) -->
+  <g opacity="0.25">
+    <line x1="-100" y1="200" x2="820" y2="400" stroke="#C9A45C" stroke-width="1.5" stroke-dasharray="12 8"/>
+    <line x1="-100" y1="280" x2="820" y2="480" stroke="#A88BEA" stroke-width="1"/>
+    <line x1="-100" y1="840" x2="820" y2="1040" stroke="#C9A45C" stroke-width="1"/>
+    <line x1="-100" y1="920" x2="820" y2="1120" stroke="#A88BEA" stroke-width="1.5" stroke-dasharray="8 6"/>
+  </g>
+
+  <!-- Top Timecode & Metadata HUD -->
+  <g opacity="0.9">
+    <text x="45" y="70" font-family="'JetBrains Mono', monospace" font-size="13" fill="#C9A45C" letter-spacing="2">03 // VERTICAL REEL</text>
+    <text x="45" y="94" font-family="'JetBrains Mono', monospace" font-size="11" fill="#DCCCF5" letter-spacing="1">SPORTS / EVENT CONTENT</text>
+
+    <text x="675" y="70" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="13" fill="#DCCCF5" letter-spacing="2">60.00 FPS • 9:16</text>
+    <text x="675" y="94" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="11" fill="#C9A45C" letter-spacing="1">ROLE: CREATIVE COLLAB</text>
+  </g>
+
+  <!-- Viewfinder Corner Accents -->
+  <path d="M35 50 L70 50 M35 50 L35 85" stroke="#C9A45C" stroke-width="2"/>
+  <path d="M685 50 L650 50 M685 50 L685 85" stroke="#C9A45C" stroke-width="2"/>
+  <path d="M35 1230 L70 1230 M35 1230 L35 1195" stroke="#C9A45C" stroke-width="2"/>
+  <path d="M685 1230 L650 1230 M685 1230 L685 1195" stroke="#C9A45C" stroke-width="2"/>
+
+  <!-- Reel Safe-Zone Overlay Outline (Subtle) -->
+  <rect x="60" y="140" width="600" height="980" rx="24" fill="none" stroke="#DCCCF5" stroke-width="1" stroke-dasharray="6 8" opacity="0.2"/>
+
+  <!-- Central Title Lockup -->
+  <g transform="translate(360, 560)" text-anchor="middle">
+    <!-- Big Bold Title -->
+    <text y="0" font-family="'Space Grotesk', sans-serif" font-weight="900" font-size="64" fill="#F6F1E9" letter-spacing="-1">
+      VELOXX CLUB
+    </text>
+    
+    <!-- Subtitle in Serif Italic -->
+    <text y="48" font-family="'Playfair Display', serif" font-style="italic" font-size="24" fill="#C9A45C">
+      High-Energy Sports &amp; Community Reel
+    </text>
+
+    <!-- Speed Ramp Timeline Visualization -->
+    <g transform="translate(-160, 110)">
+      <text x="0" y="-12" font-family="'JetBrains Mono', monospace" font-size="10" fill="#DCCCF5" letter-spacing="1.5">SPEED RAMP PROFILE // 100% → 400% → 40%</text>
+      <!-- Timeline axis -->
+      <line x1="0" y1="30" x2="320" y2="30" stroke="#77717F" stroke-width="1"/>
+      <!-- Curve line -->
+      <path d="M 0 30 C 60 30, 80 5, 120 5 C 160 5, 180 50, 220 50 C 260 50, 280 30, 320 30" fill="none" stroke="url(#speedRamp)" stroke-width="3"/>
+      <!-- Keyframe nodes -->
+      <circle cx="0" cy="30" r="4" fill="#A88BEA"/>
+      <circle cx="120" cy="5" r="5" fill="#C9A45C"/>
+      <circle cx="220" cy="50" r="5" fill="#C9A45C"/>
+      <circle cx="320" cy="30" r="4" fill="#A88BEA"/>
+    </g>
+
+    <!-- Micro Beat Sync Bars -->
+    <g transform="translate(-120, 210)" fill="#C9A45C" opacity="0.85">
+      <rect x="0" y="8" width="3" height="16" rx="1.5"/>
+      <rect x="10" y="2" width="3" height="28" rx="1.5"/>
+      <rect x="20" y="10" width="3" height="12" rx="1.5"/>
+      <rect x="30" y="0" width="3" height="32" rx="1.5" fill="#F6F1E9"/>
+      <rect x="40" y="6" width="3" height="20" rx="1.5"/>
+      <rect x="50" y="12" width="3" height="8" rx="1.5"/>
+      <rect x="60" y="2" width="3" height="28" rx="1.5"/>
+      <rect x="70" y="0" width="3" height="32" rx="1.5" fill="#F6F1E9"/>
+      <rect x="80" y="8" width="3" height="16" rx="1.5"/>
+      <rect x="90" y="4" width="3" height="24" rx="1.5"/>
+      <rect x="100" y="12" width="3" height="8" rx="1.5"/>
+      <rect x="110" y="0" width="3" height="32" rx="1.5" fill="#F6F1E9"/>
+      <rect x="120" y="6" width="3" height="20" rx="1.5"/>
+      <rect x="130" y="2" width="3" height="28" rx="1.5"/>
+      <rect x="140" y="8" width="3" height="16" rx="1.5"/>
+      <rect x="150" y="0" width="3" height="32" rx="1.5" fill="#F6F1E9"/>
+      <rect x="160" y="10" width="3" height="12" rx="1.5"/>
+      <rect x="170" y="4" width="3" height="24" rx="1.5"/>
+      <rect x="180" y="2" width="3" height="28" rx="1.5"/>
+      <rect x="190" y="8" width="3" height="16" rx="1.5"/>
+      <rect x="200" y="0" width="3" height="32" rx="1.5" fill="#F6F1E9"/>
+      <rect x="210" y="6" width="3" height="20" rx="1.5"/>
+      <rect x="220" y="10" width="3" height="12" rx="1.5"/>
+      <rect x="230" y="4" width="3" height="24" rx="1.5"/>
+    </g>
+  </g>
+
+  <!-- Bottom Elegant Status Bar -->
+  <g transform="translate(45, 1195)">
+    <rect width="280" height="28" rx="14" fill="#0E0C12" stroke="#C9A45C" stroke-width="1"/>
+    <circle cx="16" cy="14" r="4" fill="#C9A45C"/>
+    <text x="30" y="18" font-family="'JetBrains Mono', monospace" font-size="10" fill="#F6F1E9" letter-spacing="1">PROJECT MEDIA PLACEHOLDER</text>
+  </g>
+  
+  <text x="675" y="1213" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="11" fill="#77717F" letter-spacing="1">
+    VERTICAL REEL FORMAT • 9:16
+  </text>
+</svg>

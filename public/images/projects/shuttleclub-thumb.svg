@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" fill="none">
+  <defs>
+    <radialGradient id="shuttleGlow" cx="50%" cy="50%" r="65%">
+      <stop offset="0%" stop-color="#C9A45C" stop-opacity="0.22"/>
+      <stop offset="45%" stop-color="#8964DE" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#17151B" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="gridShuttle" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#A88BEA" stroke-width="0.8" opacity="0.15"/>
+    </pattern>
+  </defs>
+
+  <!-- Dark Charcoal Base -->
+  <rect width="1200" height="675" fill="#17151B"/>
+  <rect width="1200" height="675" fill="url(#gridShuttle)"/>
+  <circle cx="600" cy="337" r="450" fill="url(#shuttleGlow)"/>
+
+  <!-- Subtle Court Perspective Geometry -->
+  <g opacity="0.18">
+    <line x1="200" y1="580" x2="450" y2="200" stroke="#C9A45C" stroke-width="1.5"/>
+    <line x1="1000" y1="580" x2="750" y2="200" stroke="#C9A45C" stroke-width="1.5"/>
+    <line x1="300" y1="420" x2="900" y2="420" stroke="#DCCCF5" stroke-width="1"/>
+    <line x1="380" y1="300" x2="820" y2="300" stroke="#DCCCF5" stroke-width="1"/>
+    <!-- Net center line -->
+    <line x1="600" y1="180" x2="600" y2="580" stroke="#C9A45C" stroke-width="1" stroke-dasharray="6 6"/>
+  </g>
+
+  <!-- Top Timecode & Metadata HUD -->
+  <g opacity="0.85">
+    <text x="60" y="70" font-family="'JetBrains Mono', monospace" font-size="14" fill="#C9A45C" letter-spacing="2">04 // SPORTS CINEMATIC</text>
+    <text x="60" y="95" font-family="'JetBrains Mono', monospace" font-size="12" fill="#DCCCF5" letter-spacing="1">SPORTS &amp; SOCIAL MEDIA CONTENT • TOURNAMENT FILM</text>
+
+    <text x="1140" y="70" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="14" fill="#DCCCF5" letter-spacing="2">120.00 FPS • SLOW-MO</text>
+    <text x="1140" y="95" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="12" fill="#C9A45C" letter-spacing="1">ROLE: CREATIVE COLLAB</text>
+  </g>
+
+  <!-- Viewfinder Corner Accents -->
+  <path d="M50 50 L90 50 M50 50 L50 90" stroke="#C9A45C" stroke-width="2"/>
+  <path d="M1150 50 L1110 50 M1150 50 L1150 90" stroke="#C9A45C" stroke-width="2"/>
+  <path d="M50 625 L90 625 M50 625 L50 585" stroke="#C9A45C" stroke-width="2"/>
+  <path d="M1150 625 L1110 625 M1150 625 L1150 585" stroke="#C9A45C" stroke-width="2"/>
+
+  <!-- Central Title Lockup -->
+  <g transform="translate(600, 310)" text-anchor="middle">
+    <!-- Big Bold Title -->
+    <text y="0" font-family="'Space Grotesk', sans-serif" font-weight="900" font-size="72" fill="#F6F1E9" letter-spacing="-1">
+      SHUTTLECLUB
+    </text>
+    
+    <!-- Subtitle in Serif Italic -->
+    <text y="50" font-family="'Playfair Display', serif" font-style="italic" font-size="28" fill="#C9A45C">
+      Athletic Motion &amp; Tournament Cinematic
+    </text>
+
+    <!-- NLE Audio Waveform Graphic with athletic impact peaks -->
+    <g transform="translate(-180, 85)" fill="#A88BEA" opacity="0.8">
+      <rect x="0" y="14" width="4" height="12" rx="2"/>
+      <rect x="12" y="8" width="4" height="24" rx="2"/>
+      <rect x="24" y="2" width="4" height="36" rx="2" fill="#C9A45C"/>
+      <rect x="36" y="10" width="4" height="20" rx="2"/>
+      <rect x="48" y="15" width="4" height="10" rx="2"/>
+      <rect x="60" y="4" width="4" height="32" rx="2"/>
+      <rect x="72" y="0" width="4" height="40" rx="2" fill="#C9A45C"/>
+      <rect x="84" y="6" width="4" height="28" rx="2"/>
+      <rect x="96" y="12" width="4" height="16" rx="2"/>
+      <rect x="108" y="4" width="4" height="32" rx="2"/>
+      <rect x="120" y="0" width="4" height="40" rx="2" fill="#C9A45C"/>
+      <rect x="132" y="8" width="4" height="24" rx="2"/>
+      <rect x="144" y="14" width="4" height="12" rx="2"/>
+      <rect x="156" y="0" width="4" height="40" rx="2" fill="#C9A45C"/>
+      <rect x="168" y="6" width="4" height="28" rx="2"/>
+      <rect x="180" y="10" width="4" height="20" rx="2"/>
+      <rect x="192" y="2" width="4" height="36" rx="2" fill="#C9A45C"/>
+      <rect x="204" y="14" width="4" height="12" rx="2"/>
+      <rect x="216" y="8" width="4" height="24" rx="2"/>
+      <rect x="228" y="0" width="4" height="40" rx="2" fill="#C9A45C"/>
+      <rect x="240" y="6" width="4" height="28" rx="2"/>
+      <rect x="252" y="12" width="4" height="16" rx="2"/>
+      <rect x="264" y="0" width="4" height="40" rx="2" fill="#C9A45C"/>
+      <rect x="276" y="4" width="4" height="32" rx="2"/>
+      <rect x="288" y="10" width="4" height="20" rx="2"/>
+      <rect x="300" y="2" width="4" height="36" rx="2" fill="#C9A45C"/>
+      <rect x="312" y="8" width="4" height="24" rx="2"/>
+      <rect x="324" y="14" width="4" height="12" rx="2"/>
+      <rect x="336" y="4" width="4" height="32" rx="2"/>
+      <rect x="348" y="0" width="4" height="40" rx="2" fill="#C9A45C"/>
+      <rect x="360" y="10" width="4" height="20" rx="2"/>
+    </g>
+  </g>
+
+  <!-- Bottom Elegant Status Bar -->
+  <g transform="translate(60, 600)">
+    <rect width="280" height="28" rx="14" fill="#0E0C12" stroke="#C9A45C" stroke-width="1"/>
+    <circle cx="16" cy="14" r="4" fill="#C9A45C"/>
+    <text x="30" y="18" font-family="'JetBrains Mono', monospace" font-size="10" fill="#F6F1E9" letter-spacing="1">PROJECT MEDIA PLACEHOLDER</text>
+  </g>
+  
+  <text x="1140" y="618" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="11" fill="#77717F" letter-spacing="2">
+    DYNAMIC RETIMING &amp; SOUND DESIGN
+  </text>
+</svg>

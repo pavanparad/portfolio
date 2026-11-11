@@ -14,46 +14,70 @@ export const Footer: React.FC<FooterProps> = ({ playClickSound }) => {
   };
 
   return (
-    <footer className="relative pt-16 pb-12 border-t border-[#DCCBFA]/80 bg-[#EAE0FF]/30 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-8">
+    <footer className="relative pt-20 pb-12 border-t border-[#C9A45C]/30 bg-[#17151B] text-[#F6F1E9] overflow-hidden">
+      {/* Ambient Gold & Lavender Backdrop Glows */}
+      <div className="absolute top-0 left-1/4 w-[450px] h-[250px] rounded-full filter blur-3xl pointer-events-none opacity-20 bg-gradient-to-r from-[#C9A45C] to-[#A88BEA]" />
+      <div className="absolute bottom-0 right-1/4 w-[400px] h-[200px] rounded-full filter blur-3xl pointer-events-none opacity-15 bg-[#C9A45C]" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
         
-        {/* Top Tier: Brand identity & Back to top button */}
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-8 pb-12 border-b border-[#DCCBFA]/60">
+        {/* Top Tier: Prominent Official CP Logo & Brand Identity */}
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-10 pb-16 border-b border-white/10">
           
-          <div className="space-y-2">
-            <div className="flex items-center gap-2">
-              <span className="w-2.5 h-2.5 rounded-full bg-[#6C41CE] animate-pulse" />
-              <h2 className="font-display font-black text-xl sm:text-2xl text-[#17151D] tracking-wider">
-                MR. PAVAN CREATION
-              </h2>
+          {/* Left Side: Complete Official Logo + Brand Statement */}
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
+            
+            {/* The Complete Official Logo Plaque */}
+            <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-2xl bg-[#000000] border-2 border-[#C9A45C]/60 p-2 shadow-[0_0_35px_rgba(201,164,92,0.25)] flex items-center justify-center overflow-hidden shrink-0 group hover:border-[#C9A45C] transition-all duration-300">
+              <img
+                src="/images/logo/logo.jpg"
+                alt="MR. PAVAN CREATION Official Logo"
+                className="w-full h-full object-contain scale-[1.3] filter drop-shadow-[0_4px_12px_rgba(201,164,92,0.4)] group-hover:scale-[1.38] transition-transform duration-500"
+              />
+              <div className="absolute inset-0 rounded-2xl border border-[#DCCCF5]/15 pointer-events-none" />
             </div>
-            <p className="font-mono text-xs text-[#77717F] tracking-widest uppercase">
-              DESIGNED WITH CREATIVITY. BUILT WITH PURPOSE.
-            </p>
+
+            <div className="space-y-2">
+              <div className="flex items-center gap-2.5">
+                <span className="w-2 h-2 rounded-full bg-[#C9A45C] animate-pulse" />
+                <h2 className="font-display font-extrabold text-2xl sm:text-3xl text-[#F6F1E9] tracking-wider">
+                  MR. PAVAN CREATION
+                </h2>
+              </div>
+              <p className="font-mono text-xs sm:text-sm text-[#C9A45C] tracking-widest uppercase">
+                DESIGNED WITH CREATIVITY. BUILT WITH PURPOSE.
+              </p>
+              <p className="font-sans text-xs text-[#77717F] max-w-md">
+                Video Editor, Visual Storyteller and Creative Collaborator based in Pune, India.
+              </p>
+            </div>
+
           </div>
 
-          {/* Social Links & Back to Top */}
+          {/* Right Side: Social Media Links & Back to Top */}
           <div className="flex flex-wrap items-center gap-4">
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2.5">
               <a
-                href="https://www.instagram.com/mr.pavancreation"
+                href="https://www.instagram.com/mr.pavan_creation/"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={playClickSound}
-                className="w-10 h-10 rounded-full glass-panel flex items-center justify-center text-[#17151D] hover:text-[#6C41CE] hover:border-[#6C41CE] transition-colors border border-[#DCCBFA]"
-                title="Instagram @mr.pavancreation"
+                className="w-11 h-11 rounded-full bg-white/5 hover:bg-[#C9A45C]/20 border border-white/10 hover:border-[#C9A45C] flex items-center justify-center text-[#F6F1E9] hover:text-[#C9A45C] transition-all shadow-xs"
+                title="Instagram @mr.pavan_creation"
+                aria-label="Instagram @mr.pavan_creation"
                 data-cursor="INSTA"
               >
                 <Instagram className="w-4 h-4" />
               </a>
 
               <a
-                href="https://www.linkedin.com/in/pavan-creation"
+                href="https://www.linkedin.com/in/pavanparad"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={playClickSound}
-                className="w-10 h-10 rounded-full glass-panel flex items-center justify-center text-[#17151D] hover:text-[#6C41CE] hover:border-[#6C41CE] transition-colors border border-[#DCCBFA]"
-                title="LinkedIn Profile"
+                className="w-11 h-11 rounded-full bg-white/5 hover:bg-[#C9A45C]/20 border border-white/10 hover:border-[#C9A45C] flex items-center justify-center text-[#F6F1E9] hover:text-[#C9A45C] transition-all shadow-xs"
+                title="LinkedIn — Pavan Parad"
+                aria-label="LinkedIn — Pavan Parad"
                 data-cursor="LINKEDIN"
               >
                 <Linkedin className="w-4 h-4" />
@@ -62,7 +86,7 @@ export const Footer: React.FC<FooterProps> = ({ playClickSound }) => {
               <a
                 href="mailto:mr.pavancreation@gmail.com"
                 onClick={playClickSound}
-                className="w-10 h-10 rounded-full glass-panel flex items-center justify-center text-[#17151D] hover:text-[#6C41CE] hover:border-[#6C41CE] transition-colors border border-[#DCCBFA]"
+                className="w-11 h-11 rounded-full bg-white/5 hover:bg-[#C9A45C]/20 border border-white/10 hover:border-[#C9A45C] flex items-center justify-center text-[#F6F1E9] hover:text-[#C9A45C] transition-all shadow-xs"
                 title="Email Pavan"
                 data-cursor="EMAIL"
               >
@@ -73,11 +97,11 @@ export const Footer: React.FC<FooterProps> = ({ playClickSound }) => {
             {/* Back To Top Button */}
             <button
               onClick={scrollToTop}
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#17151D] text-[#F5F0FA] text-xs font-mono font-medium hover:bg-[#6C41CE] transition-colors shadow-xs group"
+              className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-[#C9A45C] hover:bg-[#DFC8A4] text-[#17151B] text-xs font-mono font-bold tracking-wider transition-all shadow-md group cursor-pointer"
               data-cursor="TOP"
             >
               <span>BACK TO TOP</span>
-              <ArrowUp className="w-3.5 h-3.5 group-hover:-translate-y-0.5 transition-transform" />
+              <ArrowUp className="w-4 h-4 group-hover:-translate-y-0.5 transition-transform" />
             </button>
           </div>
 
@@ -85,14 +109,16 @@ export const Footer: React.FC<FooterProps> = ({ playClickSound }) => {
 
         {/* Bottom Tier: Copyright & Credits */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-[#77717F]">
-          <div>
-            © {currentYear} MR. PAVAN CREATION • ALL RIGHTS RESERVED.
+          <div className="flex items-center gap-2">
+            <span>© {currentYear} MR. PAVAN CREATION</span>
+            <span className="text-[#C9A45C]">✦</span>
+            <span>ALL RIGHTS RESERVED</span>
           </div>
           
-          <div className="flex items-center gap-1.5 text-[11px]">
-            <span>PUNE, INDIA</span>
+          <div className="flex items-center gap-2 text-[11px]">
+            <span className="text-[#C9A45C]">PUNE, MAHARASHTRA, INDIA</span>
             <span>•</span>
-            <span>VIDEO EDITOR & VISUAL STORYTELLER</span>
+            <span>OFFICIAL BRAND PORTFOLIO</span>
           </div>
         </div>
 

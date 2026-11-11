@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Sparkles, Eye, Scissors, HeartHandshake, Film, CheckCircle2, ArrowUpRight } from 'lucide-react';
-import { DashedBoundingBox } from './DashedBoundingBox';
+import { Sparkles, Camera, Film, ArrowUpRight, CheckCircle2 } from 'lucide-react';
 
 interface AboutProps {
   playClickSound?: () => void;
@@ -10,167 +9,164 @@ interface AboutProps {
 export const About: React.FC<AboutProps> = ({ playClickSound }) => {
   const [imgError, setImgError] = useState(false);
 
-  const stats = [
-    { value: '50+', label: 'Visual Projects Cut', sub: 'Festivals, reels & promos' },
-    { value: '2.5M+', label: 'Organic Views Generated', sub: 'Across client social channels' },
-    { value: '24 FPS', label: 'Cinematic Precision', sub: 'Frame-accurate rhythm & sound' },
-    { value: '100%', label: 'Creative Dedication', sub: 'Direct collaborative vision' },
-  ];
-
-  const pillars = [
-    {
-      title: 'RHYTHM & PACING',
-      desc: 'Editing is music without notes. I build tension, drop into euphoria, and hold breath right where the story demands.',
-      icon: Scissors,
-    },
-    {
-      title: 'RETENTION SCIENCE',
-      desc: 'From the first 1.8 seconds hook to seamless replay loops, every frame is engineered to keep eyes glued to screen.',
-      icon: Eye,
-    },
-    {
-      title: 'CINEMATIC TEXTURE',
-      desc: 'Color grading, grain, kinetic typography, and custom audio impacts that elevate digital content into cinema.',
-      icon: Film,
-    },
+  const capabilities = [
+    { num: '01', title: 'VIDEO EDITING' },
+    { num: '02', title: 'VISUAL STORYTELLING' },
+    { num: '03', title: 'MOTION GRAPHICS' },
+    { num: '04', title: 'CONTENT CREATION' },
   ];
 
   return (
-    <section id="about" className="relative py-24 sm:py-32 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-8">
+    <section id="about" className="relative py-24 sm:py-32 lg:py-36 overflow-hidden bg-[#F5F0FA]">
+      
+      {/* Fine Ambient Grid & Decorative Alignment Lines */}
+      <div className="absolute inset-0 bg-grid-subtle opacity-40 pointer-events-none" />
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
         
-        {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 border-b border-[#DCCBFA]/70 pb-8">
+        {/* Section Header: Label + Title */}
+        <div className="mb-12 sm:mb-16 border-b border-[#DCCCF5]/70 pb-6 sm:pb-8 flex flex-col md:flex-row md:items-end justify-between gap-4">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EAE0FF] text-[#6C41CE] text-xs font-mono tracking-wider font-semibold mb-3">
-              <Sparkles className="w-3.5 h-3.5 text-[#8964DE]" />
-              CREATIVE PHILOSOPHY
+            {/* Small Label */}
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EAE0FF] text-[#6C41CE] text-xs font-mono tracking-wider font-semibold mb-3 border border-[#DCCCF5]">
+              <span className="text-[#C9A45C]">✦</span>
+              <span>THE PERSON BEHIND THE PROJECTS</span>
             </div>
-            <h2 className="font-display font-extrabold text-3xl sm:text-5xl lg:text-6xl text-[#17151D] tracking-tight leading-[1.05]">
-              BEHIND <br />
+
+            {/* Section Main Heading */}
+            <h2 className="font-display font-black text-3xl sm:text-5xl lg:text-6xl text-[#17151B] tracking-tight leading-[1.05]">
+              BEHIND <br className="hidden sm:inline" />
               <span className="font-serif italic font-normal text-[#6C41CE]">The Frame.</span>
             </h2>
           </div>
 
-          <p className="font-sans text-sm sm:text-base text-[#77717F] max-w-md leading-relaxed">
-            A deeper look into who I am, what drives my editorial choices, and how visual storytelling turns ordinary clips into unforgettable experiences.
-          </p>
+          <div className="text-right hidden md:block">
+            <span className="font-mono text-xs text-[#77717F] tracking-widest uppercase block">
+              MR. PAVAN CREATION • 2026
+            </span>
+            <span className="font-mono text-[11px] text-[#C9A45C] tracking-wider block mt-0.5">
+              PUNE, MAHARASHTRA
+            </span>
+          </div>
         </div>
 
-        {/* 2-Column Editorial Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center mb-16">
+        {/* Asymmetric 2-Column Editorial Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center mb-20 lg:mb-24">
           
-          {/* Left Column: Secondary Photograph Composition with Dashed Handles */}
-          <div className="lg:col-span-5 flex justify-center">
-            <DashedBoundingBox
-              dimensions="W: 420PX • H: 520PX"
-              label="STUDIO SUITE • NLE TIMELINE"
-              className="w-full max-w-[380px] sm:max-w-[420px]"
-            >
-              <div className="relative rounded-2xl overflow-hidden glass-panel p-3 border border-[#DCCBFA] shadow-lg bg-white/80">
-                
-                {/* Secondary Photograph */}
-                <div className="relative aspect-[4/5] rounded-xl overflow-hidden bg-[#17151D] group">
-                  <img
-                    src={imgError ? "/images/about-portrait.svg" : "/images/about-portrait.svg"}
-                    alt="Pavan in the editing suite"
-                    onError={() => setImgError(true)}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
+          {/* ================= LEFT SIDE: Dominant Portrait Cutout (Pavan with Camera) ================= */}
+          <div className="lg:col-span-5 xl:col-span-6 flex justify-center relative order-1">
+            
+            {/* Ambient Backlight Halo behind the cutout */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[85%] h-[85%] rounded-full filter blur-3xl opacity-60 pointer-events-none bg-gradient-to-tr from-[#DCCCF5] via-[#EAE0FF] to-[#F3E5CF]" />
 
-                  {/* Dark subtle vignette */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#17151D]/90 via-transparent to-transparent" />
+            {/* Subtle Editorial Viewfinder Crop Marks around portrait */}
+            <div className="absolute -top-4 -left-4 w-6 h-6 border-t-2 border-l-2 border-[#C9A45C]/60 pointer-events-none hidden sm:block" />
+            <div className="absolute -top-4 -right-4 w-6 h-6 border-t-2 border-r-2 border-[#C9A45C]/60 pointer-events-none hidden sm:block" />
+            <div className="absolute -bottom-4 -left-4 w-6 h-6 border-b-2 border-l-2 border-[#C9A45C]/60 pointer-events-none hidden sm:block" />
+            <div className="absolute -bottom-4 -right-4 w-6 h-6 border-b-2 border-r-2 border-[#C9A45C]/60 pointer-events-none hidden sm:block" />
 
-                  {/* Audio Meters Overlay Badge */}
-                  <div className="absolute bottom-4 inset-x-4 flex items-center justify-between text-white text-xs font-mono z-10">
-                    <div className="flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-[#A88BEA] animate-pulse" />
-                      <span>EDIT SUITE PUNE</span>
-                    </div>
-                    <span className="text-[#DCCBFA] text-[10px] bg-white/10 px-2 py-0.5 rounded">
-                      TIMELINE ACTIVE
-                    </span>
-                  </div>
-                </div>
+            {/* Transparent Cutout Container — NO rectangular card frame */}
+            <div className="relative w-full max-w-[420px] sm:max-w-[480px] lg:max-w-[560px] flex items-center justify-center">
+              <img
+                src={imgError ? "./images/pavanabout.jpg" : "./images/pavan-about-cutout.png"}
+                alt="Pavan holding camera on set — Video Editor & Visual Storyteller"
+                onError={() => setImgError(true)}
+                className="w-full h-auto object-contain select-none max-h-[580px] sm:max-h-[660px] lg:max-h-[720px] filter drop-shadow-[0_20px_40px_rgba(23,21,27,0.16)] grayscale contrast-[1.06] hover:grayscale-[0.2] transition-all duration-700 pointer-events-auto"
+                style={{
+                  // Soft, natural bottom feather blend
+                  maskImage: 'linear-gradient(to bottom, black 86%, rgba(0,0,0,0.6) 95%, transparent 100%)',
+                  WebkitMaskImage: 'linear-gradient(to bottom, black 86%, rgba(0,0,0,0.6) 95%, transparent 100%)',
+                }}
+              />
 
-                {/* Floating Craft Quote Pill */}
-                <div className="mt-3 p-3 rounded-xl bg-[#F5F0FA] border border-[#DCCBFA]/60 text-xs font-mono text-[#17151D] flex items-center justify-between">
-                  <span className="text-[#6C41CE] font-bold">CRAFT & OBSESSION</span>
-                  <span className="text-[#77717F]">24.00 FPS • PRO RES</span>
-                </div>
-
+              {/* Minimal Editorial Annotation Tag */}
+              <div className="absolute bottom-6 left-2 sm:left-4 z-20 glass-panel px-3.5 py-1.5 rounded-full shadow-xs flex items-center gap-2 border border-[#C9A45C]/50 bg-white/90 backdrop-blur-md">
+                <Camera className="w-3.5 h-3.5 text-[#C9A45C]" />
+                <span className="text-[10px] font-mono font-bold text-[#17151B] tracking-wider">
+                  DIRECTOR OF VISUALS
+                </span>
+                <span className="text-[#C9A45C]">✦</span>
+                <span className="text-[10px] font-mono text-[#77717F]">ON SET & IN SUITE</span>
               </div>
-            </DashedBoundingBox>
+            </div>
+
           </div>
 
-          {/* Right Column: Editorial Narrative & Manifesto */}
-          <div className="lg:col-span-7 space-y-6">
+          {/* ================= RIGHT SIDE: Editorial Copy & Narrative ================= */}
+          <div className="lg:col-span-7 xl:col-span-6 flex flex-col items-start space-y-6 lg:pl-2 order-2">
             
-            {/* Main Featured Statement in Serif Elegance */}
-            <blockquote className="font-serif italic text-xl sm:text-2xl lg:text-3xl text-[#17151D] leading-snug border-l-2 border-[#6C41CE] pl-6 py-1">
-              "I’m Pavan — a video editor and visual storyteller who believes that great editing is more than putting clips together. It’s about creating emotions, building rhythm and making every frame count."
-            </blockquote>
+            {/* Introduction Headline */}
+            <div className="space-y-2">
+              <h3 className="font-display font-extrabold text-2xl sm:text-3xl lg:text-4xl text-[#17151B] leading-tight">
+                <span>I'm Pavan. </span>
+                <span className="font-serif italic font-normal text-[#6C41CE] block sm:inline">
+                  I turn ideas into{' '}
+                </span>
+                <span className="relative inline-block text-[#17151B]">
+                  visual experiences.
+                  <span className="absolute bottom-1 left-0 right-0 h-2 bg-[#C9A45C]/20 -z-10 rounded-sm" />
+                </span>
+              </h3>
+            </div>
 
-            <div className="prose text-sm sm:text-base text-[#77717F] font-sans leading-relaxed space-y-4">
+            {/* Editorial Paragraphs */}
+            <div className="space-y-4 font-sans text-base sm:text-lg text-[#77717F] leading-relaxed">
               <p>
-                Based in <strong className="text-[#17151D]">Pune, India</strong>, I specialize in combining cinematic video editing, kinetic motion graphics, and social media creativity. Whether I am directing the content narrative for university festivals like <strong className="text-[#6C41CE]">PICT Addiction’26</strong> and <strong className="text-[#6C41CE]">PASC Pulzion’26</strong>, or partnering with lifestyle collectives like <strong className="text-[#6C41CE]">Veloxx Club</strong> and <strong className="text-[#6C41CE]">ShuttleClub</strong>, my objective remains constant: Crafting stories that leave a lasting mark.
+                I'm a video editor and visual storyteller driven by the art of making visuals speak.
               </p>
+
               <p>
-                I thrive in the space where technical editing rigor meets instinctual rhythm. From micro-cuts and whip-pans to deliberate slow-motion breathers, every timeline decision serves the audience's emotional journey.
+                For me, editing is more than arranging clips — it's about finding the right rhythm, creating emotion and turning ordinary footage into something people remember.
+              </p>
+
+              <p>
+                From cinematic event films to engaging social media content, I enjoy experimenting with visuals, motion and storytelling to create work that leaves an impression.
               </p>
             </div>
 
-            {/* 3 Core Editorial Pillars */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
-              {pillars.map((pillar) => {
-                const IconComponent = pillar.icon;
-                return (
-                  <div
-                    key={pillar.title}
-                    className="p-4 rounded-xl bg-white/80 border border-[#DCCBFA] shadow-2xs hover:border-[#6C41CE] transition-colors"
-                  >
-                    <div className="w-8 h-8 rounded-lg bg-[#EAE0FF] flex items-center justify-center text-[#6C41CE] mb-2.5">
-                      <IconComponent className="w-4 h-4" />
-                    </div>
-                    <h4 className="font-mono text-xs font-bold text-[#17151D] tracking-wide mb-1">
-                      {pillar.title}
-                    </h4>
-                    <p className="text-[11px] text-[#77717F] leading-relaxed">
-                      {pillar.desc}
-                    </p>
-                  </div>
-                );
-              })}
+            {/* Closing Manifesto Quote Block */}
+            <div className="w-full pt-2">
+              <blockquote className="relative p-5 sm:p-6 rounded-2xl bg-white/80 border-l-4 border-[#C9A45C] border-y border-r border-[#DCCCF5]/70 shadow-xs">
+                <span className="text-2xl text-[#C9A45C] font-serif leading-none block mb-1">“</span>
+                <p className="font-serif italic text-lg sm:text-xl lg:text-2xl text-[#17151B] leading-snug">
+                  I don't just edit videos. I craft experiences, one frame at a time.
+                </p>
+                <div className="mt-3 flex items-center justify-between text-xs font-mono text-[#77717F] pt-2 border-t border-[#DCCCF5]/50">
+                  <span className="text-[#C9A45C] font-bold">PAVAN • EDITORIAL CREATIVE</span>
+                  <span>CRAFTED IN PUNE</span>
+                </div>
+              </blockquote>
             </div>
 
           </div>
 
         </div>
 
-        {/* Key Numerical Statistics Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 pt-8 border-t border-[#DCCBFA]/70">
-          {stats.map((stat, i) => (
-            <motion.div
-              key={stat.label}
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="p-6 rounded-2xl glass-panel border border-[#DCCBFA]/70 bg-white/70 flex flex-col justify-between"
-            >
-              <div className="font-display font-black text-3xl sm:text-4xl lg:text-5xl text-[#6C41CE] tracking-tight mb-2">
-                {stat.value}
-              </div>
-              <div>
-                <div className="font-mono text-xs font-bold text-[#17151D] tracking-wide uppercase">
-                  {stat.label}
+        {/* ================= BOTTOM INFORMATION STRIP ================= */}
+        <div className="pt-8 pb-4 border-t border-[#DCCCF5]/80">
+          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+            
+            {/* Core Capabilities Grid */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 flex-1">
+              {capabilities.map((cap) => (
+                <div key={cap.title} className="flex items-center gap-2.5">
+                  <span className="text-[10px] font-mono font-bold text-[#C9A45C]">
+                    {cap.num}
+                  </span>
+                  <span className="text-xs sm:text-sm font-mono font-bold text-[#17151B] tracking-wider uppercase">
+                    {cap.title}
+                  </span>
                 </div>
-                <div className="text-[11px] text-[#77717F] font-sans mt-0.5">
-                  {stat.sub}
-                </div>
-              </div>
-            </motion.div>
-          ))}
+              ))}
+            </div>
+
+            {/* Experience Pill */}
+            <div className="shrink-0 flex items-center gap-2 px-4 py-2 rounded-full bg-[#FAF5EE] border border-[#C9A45C]/60 text-xs font-mono font-bold text-[#7D5F28] shadow-2xs">
+              <span className="w-2 h-2 rounded-full bg-[#C9A45C] animate-pulse" />
+              <span>01+ YEARS OF EDITING EXPERIENCE</span>
+            </div>
+
+          </div>
         </div>
 
       </div>

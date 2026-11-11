@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" fill="none">
+  <!-- PICT Institutional Crest Emblem -->
+  <g transform="translate(10, 10)">
+    <circle cx="34" cy="30" r="24" stroke="#C9A45C" stroke-width="2" fill="#17151B"/>
+    <!-- Gear / Circuit inner emblem -->
+    <path d="M 34 14 L 34 46 M 18 30 L 50 30 M 23 19 L 45 41 M 23 41 L 45 19" stroke="#C9A45C" stroke-width="1.2" opacity="0.6"/>
+    <circle cx="34" cy="30" r="9" fill="#C9A45C"/>
+    <text x="34" y="34" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-weight="900" font-size="10" fill="#17151B">PICT</text>
+  </g>
+  <!-- Brand Typography -->
+  <text x="76" y="40" font-family="'Space Grotesk', sans-serif" font-weight="900" font-size="28" fill="#17151B" letter-spacing="2">
+    PICT
+  </text>
+  <text x="78" y="58" font-family="'JetBrains Mono', monospace" font-size="9" fill="#77717F" letter-spacing="1.5">
+    PUNE INSTITUTE OF COMPUTER TECH
+  </text>
+</svg>

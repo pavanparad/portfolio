@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 960" fill="none">
+  <defs>
+    <radialGradient id="g_veloxxreel3svg" cx="50%" cy="45%" r="65%">
+      <stop offset="0%" stop-color="#C9A45C" stop-opacity="0.25"/>
+      <stop offset="50%" stop-color="#F6F1E9" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#17151B" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="pat_veloxxreel3svg" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#C9A45C" stroke-width="0.7" opacity="0.12"/>
+    </pattern>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="540" height="960" fill="#17151B"/>
+  <rect width="540" height="960" fill="url(#pat_veloxxreel3svg)"/>
+  <circle cx="270" cy="450" r="320" fill="url(#g_veloxxreel3svg)"/>
+
+  <!-- Viewfinder Corner Accents -->
+  <path d="M 30 40 L 60 40 M 30 40 L 30 70" stroke="#C9A45C" stroke-width="2"/>
+  <path d="M 510 40 L 480 40 M 510 40 L 510 70" stroke="#C9A45C" stroke-width="2"/>
+  <path d="M 30 920 L 60 920 M 30 920 L 30 890" stroke="#C9A45C" stroke-width="2"/>
+  <path d="M 510 920 L 480 920 M 510 920 L 510 890" stroke="#C9A45C" stroke-width="2"/>
+
+  <!-- Top Metadata HUD -->
+  <g opacity="0.9">
+    <rect x="36" y="55" width="120" height="24" rx="12" fill="#0E0C12" stroke="#C9A45C" stroke-width="1"/>
+    <text x="96" y="71" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="10" fill="#C9A45C" font-weight="bold">REEL 03 • 9:16</text>
+
+    <text x="504" y="72" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="11" fill="#F6F1E9" letter-spacing="1">REC ● 60 FPS</text>
+  </g>
+
+  <!-- Central Reel Title Lockup -->
+  <g transform="translate(270, 420)" text-anchor="middle">
+    <!-- Play Trigger Icon -->
+    <circle cx="0" cy="-60" r="38" fill="#C9A45C" fill-opacity="0.2" stroke="#C9A45C" stroke-width="1.5"/>
+    <polygon points="-8,-74 14,-60 -8,-46" fill="#F6F1E9"/>
+
+    <text y="30" font-family="'Space Grotesk', sans-serif" font-weight="900" font-size="34" fill="#F6F1E9" letter-spacing="-0.5">
+      VELOXX CLUB
+    </text>
+
+    <text y="62" font-family="'JetBrains Mono', monospace" font-size="11" fill="#C9A45C" letter-spacing="2">
+      ATHLETIC PACE & MICRO-CUTS
+    </text>
+
+    <!-- Waveform Visualizer -->
+    <g transform="translate(-90, 95)" fill="#C9A45C" opacity="0.8">
+      <rect x="0" y="8" width="3" height="16" rx="1.5"/>
+      <rect x="10" y="2" width="3" height="28" rx="1.5"/>
+      <rect x="20" y="10" width="3" height="12" rx="1.5"/>
+      <rect x="30" y="0" width="3" height="32" rx="1.5" fill="#F6F1E9"/>
+      <rect x="40" y="6" width="3" height="20" rx="1.5"/>
+      <rect x="50" y="12" width="3" height="8" rx="1.5"/>
+      <rect x="60" y="2" width="3" height="28" rx="1.5"/>
+      <rect x="70" y="0" width="3" height="32" rx="1.5" fill="#F6F1E9"/>
+      <rect x="80" y="8" width="3" height="16" rx="1.5"/>
+      <rect x="90" y="4" width="3" height="24" rx="1.5"/>
+      <rect x="100" y="12" width="3" height="8" rx="1.5"/>
+      <rect x="110" y="0" width="3" height="32" rx="1.5" fill="#F6F1E9"/>
+      <rect x="120" y="6" width="3" height="20" rx="1.5"/>
+      <rect x="130" y="2" width="3" height="28" rx="1.5"/>
+      <rect x="140" y="8" width="3" height="16" rx="1.5"/>
+      <rect x="150" y="0" width="3" height="32" rx="1.5" fill="#F6F1E9"/>
+      <rect x="160" y="10" width="3" height="12" rx="1.5"/>
+      <rect x="170" y="4" width="3" height="24" rx="1.5"/>
+    </g>
+  </g>
+
+  <!-- Bottom Safe Zone & Status Bar -->
+  <g transform="translate(36, 885)">
+    <rect width="250" height="26" rx="13" fill="#0E0C12" stroke="#C9A45C" stroke-width="1"/>
+    <circle cx="14" cy="13" r="3.5" fill="#C9A45C"/>
+    <text x="26" y="17" font-family="'JetBrains Mono', monospace" font-size="9" fill="#F6F1E9" letter-spacing="1">VIDEO READY FOR LINK</text>
+
+    <text x="468" y="18" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10" fill="#77717F">00:00:30:20</text>
+  </g>
+</svg>

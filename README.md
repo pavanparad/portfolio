@@ -1,108 +1,95 @@
-# MR. PAVAN CREATION — Creative Portfolio Website
+# MR. PAVAN CREATION — Creative Portfolio
 
-> **Premium Personal Branding & Video Editing Portfolio for Pavan**  
-> *Video Editor | Visual Storyteller | Content Creator*  
-> *Crafting Stories. Creating Impact.*
+Personal creative portfolio website for **Pavan Parad** (`@mr.pavan_creation`), maintained under [`pavanparad`](https://github.com/pavanparad) — showcasing video editing, cinematic storytelling, creative direction, motion graphics, and visual projects.
 
 ---
 
-## 🎨 Visual Design System & Behance Inspiration
+## Project Overview
 
-This website is custom-engineered based on high-end editorial and motion graphics aesthetics:
-- **Color Palette**:
-  - Primary Background: `#F5F0FA`
-  - Lavender Accent: `#DCCBFA`
-  - Light Purple Tint: `#EAE0FF`
-  - Deep Text: `#17151D`
-  - Subtle Muted Text: `#77717F`
-  - Accent Purple: `#A88BEA` / `#6C41CE`
-- **Typography**:
-  - Headings: `Space Grotesk` (Bold Editorial Sans)
-  - Expressive Accents: `Playfair Display` (Elegant Italic Serif)
-  - Body: `DM Sans` (Clean, Readable Sans)
-  - Metadata & Specs: `JetBrains Mono` (Technical Precision)
-- **Signature Interactive Elements**:
-  - **Dashed Bounding Box with 8 Resize Handles** and dimensions badge (`W: 460PX • H: 600PX`) inspired by Figma/Photoshop/NLE edit viewfinders.
-  - **Pixel Custom Cursor & Dashed Reticle** on desktop with magnetic hover expansion over buttons and interactive cards (auto-disabled on touch/mobile devices).
-  - **Subtle Geometric Grid Overlay & Ambient Particles** drifting smoothly in the background.
-  - **Interactive Project Modal** with YouTube embed & direct MP4 video playback support.
-  - **Web Audio Sound Effects**: Subtle tactile feedback on interactions (toggleable via the audio button on the navigation bar).
-  - **Celebration Confetti Burst** on copying email or submitting the project inquiry form.
+**MR. PAVAN CREATION** is a responsive React + TypeScript portfolio web application designed to present video editing work, event coverage, brand and club campaigns, personal creator reels, institutional film work, and dedicated About and Contact pages.
 
 ---
 
-## 🚀 Website Architecture
+## Key Features
 
-```
-src/
-├── components/
-│   ├── Navbar.tsx             # Floating glassmorphism nav with active indicators & sound toggle
-│   ├── Hero.tsx               # Asymmetric 2-column editorial hero with portrait & oversized typography
-│   ├── Collaborations.tsx     # Editorial grid for PICT Addiction'26, PASC Pulzion'26, Veloxx, ShuttleClub
-│   ├── Projects.tsx           # Category-filtered asymmetric project gallery (16:9 & 9:16 vertical reels)
-│   ├── ProjectModal.tsx       # Video player modal (YouTube & MP4), specs, and project breakdowns
-│   ├── About.tsx              # Behind the Frame story, secondary photography & numerical impact metrics
-│   ├── Experience.tsx         # Modern editorial timeline with roles and verified deliverables
-│   ├── Skills.tsx             # Tools of My Craft (CapCut, Premiere Pro, After Effects + 6 Creative disciplines)
-│   ├── Contact.tsx            # Memorable inquiry section with 1-click email copy & pre-filled mailto form
-│   ├── Footer.tsx             # Editorial footer with dynamic year, social links & back-to-top interaction
-│   ├── CustomCursor.tsx       # Reticle cursor with pixel center and dashed follower
-│   ├── DashedBoundingBox.tsx  # Reusable Photoshop/Figma-style bounding box component
-│   └── BackgroundElements.tsx # Subtle grid, floating particles, and purple ambient gradient blooms
-├── data/
-│   ├── projects.ts            # Centralized project catalog (easy to add/edit/replace links)
-│   ├── collaborations.ts      # Brands and verified collaborations data
-│   ├── experience.ts          # Timeline and organizational roles
-│   └── skills.ts              # Software proficiencies and creative capabilities
-├── types/
-│   └── index.ts               # Complete TypeScript interfaces
-└── styles/
-    └── index.css              # Custom Tailwind CSS utilities, glassmorphism & grain overlay
+- **Personal Portfolio & Introduction**: Custom logo intro sequence (`LoadingIntro`), editorial Hero showcase (`Hero`), and homepage overview (`About`).
+- **Client & Organization Showcases**: Dedicated showcases for `VELOXX CLUB` and `SHUTTLECLUB` (`Collaborations`, `ClientProjects`, `VeloxxShowcase`, `ShuttleclubShowcase`).
+- **Experience & Leadership Showcases**: Event campaign galleries for PICT ACM Student Chapter (`PULZION'26`, `STRIVER: Code to Career`) and `PICT ADDICTION'26`.
+- **Personal Creator & Institutional Galleries**: `PAVAN ARTS` (`PersonalCreatorWork`), PICT official promotional film (`InstitutionalProject`), and `CONTENT THAT CONNECTS.` (`SocialMediaContent`) with creator video reels.
+- **Video Portfolio Galleries**: Native HTML5 `<video>` playback supporting `16:9` horizontal and `9:16` vertical formats (`VeloxxVideoPlayer`, `ReelCard`, `ProjectModal`, Instagram reel fallback/embed support).
+- **Dedicated About & Contact Pages**: Client-side routed `/about` (`AboutPage`) and `/contact` (`ContactPage`) alongside the homepage, with validated project inquiry drafting and direct contact links.
+- **Responsive Design & Motion**: Tailored layouts across desktop, tablet, and mobile viewports with Framer Motion transitions respecting `prefers-reduced-motion` accessibility preferences.
+
+---
+
+## Tech Stack
+
+- **UI Framework**: React `18.3.1` & React DOM `18.3.1`
+- **Language**: TypeScript `5.6.3`
+- **Build Tool**: Vite `5.4.10` (`@vitejs/plugin-react` `4.3.3`)
+- **Styling**: Tailwind CSS `3.4.14`, PostCSS `10.4.20`, Autoprefixer `10.4.20`
+- **Animations & UI**: Framer Motion `11.11.17`, Lucide React `0.454.0`, Canvas Confetti `1.9.4`
+- **Class Utilities**: `clsx` `2.1.1`, `tailwind-merge` `2.5.4`
+
+---
+
+## Project Structure
+
+```text
+├── public/
+│   ├── images/              # Portraits, logos, brand assets, and SVG thumbnails
+│   ├── logos/               # Organization and brand logos
+│   ├── videos/              # Portfolio showcase MP4 videos
+│   ├── _redirects           # SPA route fallback for static hosts
+│   └── favicon.svg
+├── src/
+│   ├── components/          # Homepage sections, shared nav/footer, and video players
+│   ├── data/                # Structured project, skill, logo, and showcase metadata
+│   ├── pages/               # Dedicated AboutPage (/about) and ContactPage (/contact)
+│   ├── styles/              # Tailwind CSS entry and custom utility styles
+│   ├── types/               # TypeScript interfaces
+│   ├── App.tsx              # Route handling and main application layout
+│   └── main.tsx             # React entry point
+├── index.html
+├── package.json
+├── tailwind.config.js
+├── tsconfig.json
+├── vercel.json              # Vercel SPA routing rewrites
+└── vite.config.ts
 ```
 
 ---
 
-## 🛠️ How to Replace Placeholders with Real Assets
+## Installation & Local Development
 
-### 1. Replacing the Hero & About Portraits
-- Place your transparent background cutout or portrait photo in `public/images/portrait.png`.
-- The hero image will automatically prioritize `/images/portrait.png` and falls back gracefully to `/images/hero-portrait.svg`.
-- For the About section secondary photo, replace `public/images/about-portrait.svg` or drop `about-portrait.png`.
+Requires Node.js and npm.
 
-### 2. Updating Projects and Videos
-All projects are centralized in [`src/data/projects.ts`](file:///c:/Users/pavan/OneDrive/Desktop/PORTFOLIO/src/data/projects.ts):
-```ts
-{
-  id: 'pict-addiction-aftermovie',
-  title: 'PICT ADDICTION’26 — OFFICIAL FESTIVAL AFTERMOVIE',
-  category: 'EVENT FILMS',
-  categoryKey: 'event',
-  aspectRatio: '16:9', // or '9:16' for vertical reels!
-  thumbnailUrl: 'https://images.unsplash.com/...',
-  videoUrl: 'https://www.youtube.com/embed/YOUR_VIDEO_ID', // Or direct .mp4 URL
-  description: '...',
-  client: '...',
-  highlights: [...]
-}
-```
-
-### 3. Contact & Social Information
-- **Email**: `mr.pavancreation@gmail.com`
-- **Instagram**: `@mr.pavancreation` (`https://www.instagram.com/mr.pavancreation`)
-- **LinkedIn**: Configurable in [`src/components/Contact.tsx`](file:///c:/Users/pavan/OneDrive/Desktop/PORTFOLIO/src/components/Contact.tsx)
-
----
-
-## 💻 Development & Production
-
-To run locally outside the sandbox:
 ```bash
-# Start local development server on http://localhost:3000
-npm run dev
+# Install dependencies
+npm install
 
-# Build for production
+# Start the local development server (http://localhost:3000)
+npm run dev
+```
+
+---
+
+## Production Build & Deployment
+
+```bash
+# Type-check with TypeScript and generate production bundle in dist/
 npm run build
 
-# Preview production build
+# Preview the production bundle locally
 npm run preview
 ```
+
+SPA fallback routing for `/about` and `/contact` is configured via `vercel.json` (Vercel) and `public/_redirects` (Netlify / Cloudflare Pages).
+
+---
+
+## Contact
+
+- **Instagram**: [`@mr.pavan_creation`](https://www.instagram.com/mr.pavan_creation/)
+- **Email**: [mr.pavancreation@gmail.com](mailto:mr.pavancreation@gmail.com)
+- **LinkedIn**: [`linkedin.com/in/pavanparad`](https://www.linkedin.com/in/pavanparad)

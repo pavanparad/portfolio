@@ -1,148 +1,387 @@
-import { Project } from '../types';
+import { ProjectShowcaseItem, Project } from '../types';
 
-export const CATEGORIES = [
-  { key: 'all', label: '00 — ALL WORKS' },
-  { key: 'event', label: '01 — EVENT FILMS' },
-  { key: 'cinematic', label: '02 — CINEMATIC REELS' },
-  { key: 'promo', label: '03 — PROMOTIONAL VIDEOS' },
-  { key: 'social', label: '04 — SOCIAL MEDIA CONTENT' },
-  { key: 'motion', label: '05 — MOTION GRAPHICS' },
-] as const;
-
-export const PROJECTS: Project[] = [
+export const PROJECT_SHOWCASES: ProjectShowcaseItem[] = [
   {
-    id: 'pict-addiction-aftermovie',
+    id: 'pulzion-26-pasc',
     number: '01',
-    title: 'PICT ADDICTION’26 — OFFICIAL FESTIVAL AFTERMOVIE',
-    category: 'EVENT FILMS',
-    categoryKey: 'event',
-    year: '2026',
-    role: 'Lead Video Editor & Colorist',
-    tools: ['Premiere Pro', 'After Effects', 'CapCut'],
-    duration: '02:45',
-    aspectRatio: '16:9',
-    thumbnailUrl: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1200&auto=format&fit=crop',
-    videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', // Configurable YouTube or MP4 link
-    description: 'A high-octane cinematic recap capturing the electric atmosphere, live performances, crowd euphoria, and campus spirit of PICT Addiction’26. Cut to dynamic rhythmic sync with bespoke sound design and film grain grading.',
-    client: 'PICT Addiction’26 Festival Team',
-    highlights: [
-      'Multi-cam synchronization of 8+ stage & crowd angles',
-      'Custom beat-matched speed ramps and glitch transitions',
-      'Cinematic 2.39:1 widescreen framing with custom purple-tint LUT',
-      'Over 25,000+ views across official college social handles'
-    ],
-    accentColor: '#A88BEA'
-  },
-  {
-    id: 'pulzion-teaser-motion',
-    number: '02',
-    title: 'PASC PULZION’26 — FLAGSHIP TECH EVENT LAUNCH TEASER',
-    category: 'PROMOTIONAL VIDEOS',
-    categoryKey: 'promo',
+    title: 'PULZION’26 — PASC',
+    client: 'PICT ACM Student Chapter (PASC)',
+    category: 'FLAGSHIP TECH SYMPOSIUM & SOCIAL CAMPAIGN',
     year: '2026',
     role: 'Video Editing & Social Media Lead',
-    tools: ['After Effects', 'Premiere Pro', 'Photoshop'],
-    duration: '00:58',
-    aspectRatio: '16:9',
-    thumbnailUrl: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1200&auto=format&fit=crop',
-    videoUrl: 'https://www.youtube.com/embed/ScMzIvxBSi4', // Configurable link
-    description: 'An adrenaline-fueled promotional trailer introducing PICT ACM Student Chapter’s flagship annual symposium. Built with cyber-glitch typography, sleek 3D HUD motion elements, and bass-heavy pacing to ignite registrations.',
-    client: 'PICT ACM Student Chapter (PASC)',
-    highlights: [
-      'Kinetic title animation and geometric UI overlays',
-      'Heavy bass-drop pacing engineered for maximum engagement',
-      'Custom sound FX: risers, braams, and digital glitch impacts',
-      'Drove 40%+ spike in early-bird registrations upon release'
+    responsibilities: [
+      'Led the core video editing pipeline and motion design direction',
+      'Orchestrated multi-platform promotional reel release calendar',
+      'Designed kinetic title cards, HUD graphics, and cybernetic audio sync',
+      'Created multi-format adaptations for 16:9 widescreen & 9:16 vertical stories'
     ],
-    accentColor: '#C4A7FF'
+    introduction: 'The annual flagship technical symposium of the PICT ACM Student Chapter (PASC). Built around the celestial theme "Beyond Earth", this campaign transformed technical event announcements into high-velocity cinematic experiences engineered to command attention across campus and student social networks.',
+    logoUrl: './images/projects/pulzion-logo.svg',
+    accentColor: '#C9A45C',
+    reels: [
+      {
+        id: 'pulzion-reel-1',
+        title: 'Theme Reveal: Beyond Earth',
+        label: 'CONCEPT LAUNCH',
+        duration: '00:32',
+        aspectRatio: '9:16',
+        thumbnailUrl: './images/projects/reels/pulzion-reel-1.svg',
+        videoUrl: '', // Ready for local MP4 or video file
+        socialUrl: '', // Ready for Instagram reel URL
+        viewsPlaceholder: '[VERIFIED VIEWS PENDING]'
+      },
+      {
+        id: 'pulzion-reel-2',
+        title: 'Flagship Teaser & Speaker Announcement',
+        label: 'EVENT TEASER',
+        duration: '00:48',
+        aspectRatio: '9:16',
+        thumbnailUrl: './images/projects/reels/pulzion-reel-2.svg',
+        videoUrl: '', // Ready for local MP4 or video file
+        socialUrl: '', // Ready for Instagram reel URL
+        viewsPlaceholder: '[VERIFIED VIEWS PENDING]'
+      },
+      {
+        id: 'pulzion-reel-3',
+        title: 'Symposium Recap & Grand Aftermovie',
+        label: 'OFFICIAL RECAP',
+        duration: '01:05',
+        aspectRatio: '9:16',
+        thumbnailUrl: './images/projects/reels/pulzion-reel-3.svg',
+        videoUrl: '', // Ready for local MP4 or video file
+        socialUrl: '', // Ready for Instagram reel URL
+        viewsPlaceholder: '[VERIFIED VIEWS PENDING]'
+      }
+    ],
+    highlightsSection: {
+      theme: 'Beyond Earth',
+      eventCount: 12,
+      description: 'Pulzion’26 is PICT ACM Student Chapter’s flagship technical symposium. Centered around the "Beyond Earth" futuristic theme, PASC hosted 12 diverse technical and non-technical competitive events spanning algorithmic coding, UI/UX design, robotics, web development, and competitive quizzing.',
+      keyMoments: [
+        'Curated thematic "Beyond Earth" futuristic title sequences and sound design',
+        'Coordinated coverage across all 12 events hosted simultaneously by PASC',
+        'Engineered rapid-turnaround daily teasers to drive registration momentum',
+        'Delivered high-octane 60 FPS vertical cuts tuned for algorithm retention'
+      ]
+    },
+    performance: {
+      totalViewsPlaceholder: '[METRICS PENDING VERIFICATION]',
+      reachPlaceholder: '[REACH STATS PENDING VERIFIED DATA]',
+      engagementPlaceholder: '[ENGAGEMENT METRIC TO BE ADDED]',
+      metricsNotice: 'Official analytics will be displayed once verified creator data is linked.'
+    },
+    socialLinks: {
+      instagramPage: {
+        handle: '@pasc_pict',
+        urlPlaceholder: '[INSTAGRAM PAGE URL TO BE ADDED]'
+      },
+      reels: [
+        {
+          title: 'Reel 01: Theme Reveal',
+          urlPlaceholder: '[INSTAGRAM REEL 1 URL TO BE ADDED]'
+        },
+        {
+          title: 'Reel 02: Flagship Teaser',
+          urlPlaceholder: '[INSTAGRAM REEL 2 URL TO BE ADDED]'
+        },
+        {
+          title: 'Reel 03: Event Aftermovie',
+          urlPlaceholder: '[INSTAGRAM REEL 3 URL TO BE ADDED]'
+        }
+      ]
+    },
+    tools: ['Premiere Pro', 'After Effects', 'Photoshop']
   },
   {
-    id: 'veloxx-cinematic-reel',
-    number: '03',
-    title: 'VELOXX CLUB — HIGH ENERGY COMMUNITY REEL',
-    category: 'CINEMATIC REELS',
-    categoryKey: 'cinematic',
-    year: '2025',
-    role: 'Director of Editing & Creative Collaborator',
-    tools: ['CapCut', 'Premiere Pro'],
-    duration: '00:34',
-    aspectRatio: '9:16',
-    thumbnailUrl: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=800&auto=format&fit=crop',
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-young-man-skater-doing-tricks-in-a-skatepark-42232-large.mp4',
-    description: 'Fast-paced vertical reel engineered specifically for Instagram Reels and TikTok algorithms. Seamless whip transitions, punchy typography pop-ups, and color-graded nighttime urban tones.',
-    client: 'Veloxx Club',
-    highlights: [
-      'Vertical 9:16 mobile-first visual composition',
-      'Micro-cut pacing under 0.4s per shot for relentless retention',
-      'Trending audio sync with rhythmic flash transitions',
-      'Surpassed 50,000+ organic reach within 48 hours'
-    ],
-    accentColor: '#8964DE'
-  },
-  {
-    id: 'shuttleclub-sports-promo',
-    number: '04',
-    title: 'SHUTTLECLUB — ATHLETIC MOTION & TOURNAMENT SHOWCASE',
-    category: 'EVENT FILMS',
-    categoryKey: 'event',
-    year: '2025',
-    role: 'Creative Collaborator & Lead Editor',
-    tools: ['Premiere Pro', 'After Effects'],
-    duration: '01:20',
-    aspectRatio: '16:9',
-    thumbnailUrl: 'https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?q=80&w=1200&auto=format&fit=crop',
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-tennis-player-smashing-the-ball-in-a-court-41399-large.mp4',
-    description: 'Dynamic sports cinematic highlighting the speed, agility, and competitive spirit of the ShuttleClub badminton championships. Combines 120fps slow-motion impact shots with sharp speed-ramp acceleration.',
-    client: 'ShuttleClub',
-    highlights: [
-      'Frame-accurate slow-motion retiming at 120fps',
-      'Custom athletic sound design: racket swishes, court squeaks, cheers',
-      'Contrasty sports documentary grading with deep blacks and vibrant highlights'
-    ],
-    accentColor: '#DCCBFA'
-  },
-  {
-    id: 'cyber-motion-typography',
-    number: '05',
-    title: 'EDITORIAL KINETIC TYPOGRAPHY & IDENTITY SHOWREEL',
-    category: 'MOTION GRAPHICS',
-    categoryKey: 'motion',
+    id: 'addiction-26-pict',
+    number: '02',
+    title: 'ADDICTION’26 — PICT',
+    client: 'PICT Annual Cultural Festival',
+    category: 'COLLEGIATE CULTURAL FESTIVAL & CONCERT COVERAGE',
     year: '2026',
-    role: 'Motion Designer',
-    tools: ['After Effects', 'Illustrator'],
-    duration: '00:45',
-    aspectRatio: '16:9',
-    thumbnailUrl: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1200&auto=format&fit=crop',
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-digital-animation-of-screens-with-code-31911-large.mp4',
-    description: 'Exploration of avant-garde editorial motion graphics, brutalist typography layouts, pixelated UI elements, and expressive text animation. Designed to push the boundary of branding in video.',
-    client: 'Creative Lab Experiment',
-    highlights: [
-      'Variable font kinetic morphing and distortion effects',
-      'Grid-locked isometric perspective animation',
-      'Precision keyframing with expressive easing curves'
+    role: 'Content Lead',
+    responsibilities: [
+      'Directed video coverage team across concert nights and campus stages',
+      'Orchestrated multi-camera concert synchronization and beat-matched cuts',
+      'Custom color grading tailored to dynamic stage lighting and crowd euphoria',
+      'Published same-night recap packages for continuous viral engagement'
     ],
-    accentColor: '#A88BEA'
+    introduction: 'The crown jewel of PICT’s student calendar, Addiction’26 brings together thousands of students for electrifying musical nights, celebrity artist concerts, and competitive performing arts. Every edit captures raw human emotion, collective adrenaline, and unforgettable stage energy.',
+    logoUrl: './images/logos/ADDICTION logo .png',
+    accentColor: '#8964DE',
+    reels: [
+      {
+        id: 'addiction-reel-1',
+        title: 'Festival Launch & Campus Anthem',
+        label: 'LAUNCH TEASER',
+        duration: '00:35',
+        aspectRatio: '9:16',
+        thumbnailUrl: './images/projects/reels/addiction-reel-1.svg',
+        videoUrl: '', // Ready for local MP4 or video file
+        socialUrl: '', // Ready for Instagram reel URL
+        viewsPlaceholder: '[VERIFIED VIEWS PENDING]'
+      },
+      {
+        id: 'addiction-reel-2',
+        title: 'Concert Euphoria & Stage Beams',
+        label: 'CONCERT HIGHLIGHT',
+        duration: '00:52',
+        aspectRatio: '9:16',
+        thumbnailUrl: './images/projects/reels/addiction-reel-2.svg',
+        videoUrl: '', // Ready for local MP4 or video file
+        socialUrl: '', // Ready for Instagram reel URL
+        viewsPlaceholder: '[VERIFIED VIEWS PENDING]'
+      },
+      {
+        id: 'addiction-reel-3',
+        title: 'Cultural Dance & Crowd Euphoria',
+        label: 'STAGE BATTLE',
+        duration: '00:44',
+        aspectRatio: '9:16',
+        thumbnailUrl: './images/projects/reels/addiction-reel-3.svg',
+        videoUrl: '', // Ready for local MP4 or video file
+        socialUrl: '', // Ready for Instagram reel URL
+        viewsPlaceholder: '[VERIFIED VIEWS PENDING]'
+      }
+    ],
+    highlightsSection: {
+      description: 'PICT Addiction is one of Pune’s premier collegiate cultural celebrations. Featuring star nights, inter-college choreography battles, battle of the bands, and theatrical performances, the festival demands relentless, high-energy storytelling.',
+      keyMoments: [
+        'Multi-cam synchronization of live concerts and 8+ stage angles',
+        'Color grading preserving rich neon stage tones and deep nighttime blacks',
+        'Fast turnaround reel production keeping students hyped throughout the fest',
+        'Seamless audio crossfades blending crowd noise with musical drops'
+      ]
+    },
+    performance: {
+      totalViewsPlaceholder: '[METRICS PENDING VERIFICATION]',
+      reachPlaceholder: '[REACH STATS PENDING VERIFIED DATA]',
+      engagementPlaceholder: '[ENGAGEMENT METRIC TO BE ADDED]',
+      metricsNotice: 'Official analytics will be displayed once verified creator data is linked.'
+    },
+    socialLinks: {
+      instagramPage: {
+        handle: '@pict_addiction',
+        urlPlaceholder: '[INSTAGRAM PAGE URL TO BE ADDED]'
+      },
+      reels: [
+        {
+          title: 'Reel 01: Launch Teaser',
+          urlPlaceholder: '[INSTAGRAM REEL 1 URL TO BE ADDED]'
+        },
+        {
+          title: 'Reel 02: Concert Euphoria',
+          urlPlaceholder: '[INSTAGRAM REEL 2 URL TO BE ADDED]'
+        },
+        {
+          title: 'Reel 03: Cultural Battle',
+          urlPlaceholder: '[INSTAGRAM REEL 3 URL TO BE ADDED]'
+        }
+      ]
+    },
+    tools: ['Premiere Pro', 'After Effects', 'CapCut']
   },
   {
-    id: 'viral-creator-social-series',
-    number: '06',
-    title: 'RETENTION-FIRST SOCIAL MEDIA CONTENT SERIES',
-    category: 'SOCIAL MEDIA CONTENT',
-    categoryKey: 'social',
-    year: '2025',
-    role: 'Short-Form Video Specialist',
-    tools: ['CapCut', 'Premiere Pro'],
-    duration: '00:40',
-    aspectRatio: '9:16',
-    thumbnailUrl: 'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?q=80&w=800&auto=format&fit=crop',
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-hands-holding-a-smartphone-with-a-green-screen-42998-large.mp4',
-    description: 'Hook-driven vertical video package crafted for maximum retention and watch-time. Features animated subtitles, dynamic B-roll cutaways, sound effects punctuation, and crisp visual hooks in the first 2 seconds.',
-    client: 'Creator Collaboration Series',
-    highlights: [
-      '1.8s instant visual hook strategy to eliminate swipe-away',
-      'Handcrafted word-by-word animated captions with emoji cues',
-      'Seamless loop structure engineered for continuous replay'
+    id: 'veloxx-club',
+    number: '03',
+    title: 'VELOXX CLUB',
+    client: 'Veloxx Club',
+    category: 'SPORTS & CREATIVE YOUTH COMMUNITY',
+    year: '2025–2026',
+    role: 'Creative Collaboration',
+    responsibilities: [
+      'Collaborated on visual aesthetic, moodboards, and camera framing',
+      'Crafted custom non-linear speed ramp profiles for athletic movements',
+      'Optimized vertical 9:16 compositions for rapid swipe retention',
+      'Developed bespoke impact sound design and kinetic title treatments'
     ],
-    accentColor: '#6C41CE'
+    introduction: 'A high-energy creative collaboration celebrating urban lifestyle, community movement, and youth athletic expression. Tailored from the ground up for mobile vertical feeds with aggressive speed ramps, micro-beat cuts, and contrasty color grades.',
+    logoUrl: './images/logos/veloxx-logo.svg',
+    accentColor: '#C9A45C',
+    reels: [
+      {
+        id: 'veloxx-reel-1',
+        title: 'Speed Ramp & Motion Profile',
+        label: 'KINETIC PROFILE',
+        duration: '00:28',
+        aspectRatio: '9:16',
+        thumbnailUrl: './images/projects/reels/veloxx-reel-1.svg',
+        videoUrl: '', // Ready for local MP4 or video file
+        socialUrl: '', // Ready for Instagram reel URL
+        viewsPlaceholder: '[VERIFIED VIEWS PENDING]'
+      },
+      {
+        id: 'veloxx-reel-2',
+        title: 'Community Meet & Urban Lifestyle',
+        label: 'COMMUNITY REEL',
+        duration: '00:34',
+        aspectRatio: '9:16',
+        thumbnailUrl: './images/projects/reels/veloxx-reel-2.svg',
+        videoUrl: '', // Ready for local MP4 or video file
+        socialUrl: '', // Ready for Instagram reel URL
+        viewsPlaceholder: '[VERIFIED VIEWS PENDING]'
+      },
+      {
+        id: 'veloxx-reel-3',
+        title: 'Athletic Pace & Dynamic Micro-Cuts',
+        label: 'DYNAMIC SHOWCASE',
+        duration: '00:30',
+        aspectRatio: '9:16',
+        thumbnailUrl: './images/projects/reels/veloxx-reel-3.svg',
+        videoUrl: '', // Ready for local MP4 or video file
+        socialUrl: '', // Ready for Instagram reel URL
+        viewsPlaceholder: '[VERIFIED VIEWS PENDING]'
+      }
+    ],
+    highlightsSection: {
+      description: 'Veloxx Club brings together creators, athletes, and youth pioneers. The project emphasizes raw kinetic momentum, urban textures, and modern rhythm-driven editing.',
+      keyMoments: [
+        'Non-linear speed ramping (100% → 400% acceleration → 40% slow-mo impact)',
+        'Frame-accurate beat matching ensuring visual sync with trending tracks',
+        'Contrasty modern color grading emphasizing urban tones and highlights',
+        'Mobile-first retention strategy keeping view drop-off under 15%'
+      ]
+    },
+    performance: {
+      totalViewsPlaceholder: '[METRICS PENDING VERIFICATION]',
+      reachPlaceholder: '[REACH STATS PENDING VERIFIED DATA]',
+      engagementPlaceholder: '[ENGAGEMENT METRIC TO BE ADDED]',
+      metricsNotice: 'Official analytics will be displayed once verified creator data is linked.'
+    },
+    socialLinks: {
+      instagramPage: {
+        handle: '@veloxxclub',
+        urlPlaceholder: '[INSTAGRAM PAGE URL TO BE ADDED]'
+      },
+      reels: [
+        {
+          title: 'Reel 01: Speed Ramp Showcase',
+          urlPlaceholder: '[INSTAGRAM REEL 1 URL TO BE ADDED]'
+        },
+        {
+          title: 'Reel 02: Community Meet',
+          urlPlaceholder: '[INSTAGRAM REEL 2 URL TO BE ADDED]'
+        },
+        {
+          title: 'Reel 03: Athletic Cut',
+          urlPlaceholder: '[INSTAGRAM REEL 3 URL TO BE ADDED]'
+        }
+      ]
+    },
+    tools: ['Premiere Pro', 'CapCut']
+  },
+  {
+    id: 'shuttleclub',
+    number: '04',
+    title: 'SHUTTLECLUB',
+    client: 'ShuttleClub',
+    category: 'SPORTS & TOURNAMENT SHOWCASE',
+    year: '2025–2026',
+    role: 'Creative Collaboration',
+    responsibilities: [
+      'Executed dynamic sports cinematography editing and slow-motion retiming',
+      'Engineered frame-accurate audio foley: racket swishes, court squeaks, smashes',
+      'Color graded high-contrast athletic documentary visuals',
+      'Structured tournament recaps to celebrate champion rallies and athletic skill'
+    ],
+    introduction: 'A cinematic sports showcase highlighting the agility, speed, and fierce intensity of competitive badminton. Cut to rhythm with 120 FPS high-frame-rate retiming and impactful sound design that puts the viewer directly on the court.',
+    logoUrl: './images/logos/shuttleclub-logo.svg',
+    accentColor: '#6C41CE',
+    reels: [
+      {
+        id: 'shuttle-reel-1',
+        title: 'Championship Point: 120 FPS Slow-Mo',
+        label: 'ATHLETIC IMPACT',
+        duration: '00:38',
+        aspectRatio: '9:16',
+        thumbnailUrl: './images/projects/reels/shuttle-reel-1.svg',
+        videoUrl: '', // Ready for local MP4 or video file
+        socialUrl: '', // Ready for Instagram reel URL
+        viewsPlaceholder: '[VERIFIED VIEWS PENDING]'
+      },
+      {
+        id: 'shuttle-reel-2',
+        title: 'Rally Intensity & Court Movement',
+        label: 'MATCH RALLY',
+        duration: '00:45',
+        aspectRatio: '9:16',
+        thumbnailUrl: './images/projects/reels/shuttle-reel-2.svg',
+        videoUrl: '', // Ready for local MP4 or video file
+        socialUrl: '', // Ready for Instagram reel URL
+        viewsPlaceholder: '[VERIFIED VIEWS PENDING]'
+      },
+      {
+        id: 'shuttle-reel-3',
+        title: 'Tournament Aftermovie & Athlete Spotlight',
+        label: 'CHAMPIONS RECAP',
+        duration: '01:10',
+        aspectRatio: '9:16',
+        thumbnailUrl: './images/projects/reels/shuttle-reel-3.svg',
+        videoUrl: '', // Ready for local MP4 or video file
+        socialUrl: '', // Ready for Instagram reel URL
+        viewsPlaceholder: '[VERIFIED VIEWS PENDING]'
+      }
+    ],
+    highlightsSection: {
+      description: 'ShuttleClub celebrates the fast-paced competitive badminton circuit. The video package covers critical tournament matches, athlete concentration, and lightning-fast rallies.',
+      keyMoments: [
+        'Frame-accurate 120 FPS slow-motion retiming on decisive smash points',
+        'Custom audio design magnifying racket impacts, sneaker skids, and applause',
+        'Deep sports contrast grading with vivid greens and crisp white shuttlecock highlights',
+        'Emotional arc tracking tournament tension through to final trophy lift'
+      ]
+    },
+    performance: {
+      totalViewsPlaceholder: '[METRICS PENDING VERIFICATION]',
+      reachPlaceholder: '[REACH STATS PENDING VERIFIED DATA]',
+      engagementPlaceholder: '[ENGAGEMENT METRIC TO BE ADDED]',
+      metricsNotice: 'Official analytics will be displayed once verified creator data is linked.'
+    },
+    socialLinks: {
+      instagramPage: {
+        handle: '@shuttleclub',
+        urlPlaceholder: '[INSTAGRAM PAGE URL TO BE ADDED]'
+      },
+      reels: [
+        {
+          title: 'Reel 01: Championship Point',
+          urlPlaceholder: '[INSTAGRAM REEL 1 URL TO BE ADDED]'
+        },
+        {
+          title: 'Reel 02: Rally Intensity',
+          urlPlaceholder: '[INSTAGRAM REEL 2 URL TO BE ADDED]'
+        },
+        {
+          title: 'Reel 03: Tournament Aftermovie',
+          urlPlaceholder: '[INSTAGRAM REEL 3 URL TO BE ADDED]'
+        }
+      ]
+    },
+    tools: ['Premiere Pro', 'After Effects']
   }
 ];
+
+// Backwards-compatible PROJECTS export if needed
+export const PROJECTS: Project[] = PROJECT_SHOWCASES.map(p => ({
+  id: p.id,
+  number: p.number,
+  title: p.title,
+  category: p.category,
+  categoryKey: p.id.includes('pulzion') || p.id.includes('addiction') ? 'event' : 'sports',
+  year: p.year,
+  role: p.role,
+  tools: p.tools,
+  duration: p.reels[0]?.duration || '01:00',
+  aspectRatio: '9:16',
+  thumbnailUrl: p.reels[0]?.thumbnailUrl || '',
+  description: p.introduction,
+  client: p.client,
+  highlights: p.responsibilities,
+  accentColor: p.accentColor
+}));
+
+export const CATEGORIES = [
+  { key: 'all', label: '00 — ALL SHOWCASES' },
+  { key: 'event', label: '01 — EVENT & SYMPOSIUMS' },
+  { key: 'sports', label: '02 — SPORTS & COMMUNITY' },
+] as const;

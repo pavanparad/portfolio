@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 80" fill="none">
+  <!-- SHUTTLECLUB Athletic Sports Emblem & Wordmark -->
+  <g transform="translate(10, 10)">
+    <!-- Shuttlecock Feather Wings Graphic -->
+    <path d="M 12 18 C 24 10, 48 10, 60 18 L 44 48 C 40 54, 32 54, 28 48 Z" fill="#6C41CE" opacity="0.9"/>
+    <ellipse cx="36" cy="52" rx="7" ry="5" fill="#C9A45C"/>
+    <!-- Cross strings detail -->
+    <line x1="24" y1="26" x2="48" y2="26" stroke="#F6F1E9" stroke-width="1.5"/>
+    <line x1="28" y1="36" x2="44" y2="36" stroke="#F6F1E9" stroke-width="1.5"/>
+    <line x1="36" y1="18" x2="36" y2="48" stroke="#F6F1E9" stroke-width="1.5"/>
+  </g>
+  <!-- Brand Typography -->
+  <text x="82" y="42" font-family="'Space Grotesk', sans-serif" font-weight="900" font-size="25" fill="#17151B" letter-spacing="2">
+    SHUTTLECLUB
+  </text>
+  <text x="84" y="58" font-family="'JetBrains Mono', monospace" font-size="10" fill="#77717F" letter-spacing="3">
+    SPORTS &amp; BADMINTON LEAGUE
+  </text>
+</svg>

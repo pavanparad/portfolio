@@ -1,37 +1,63 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, ArrowUpRight, Volume2, VolumeX, Sparkles } from 'lucide-react';
+import { Menu, X, ArrowUpRight, Volume2, VolumeX } from 'lucide-react';
+
+export type AppRoute = '/' | '/about' | '/contact';
 
 interface NavbarProps {
   soundEnabled: boolean;
   onToggleSound: () => void;
   playClickSound?: () => void;
+  currentRoute?: AppRoute;
+  onNavigate?: (route: AppRoute, hash?: string) => void;
+}
+
+interface NavLinkItem {
+  name: string;
+  href: string;
+  id: string;
+  route: AppRoute;
+  hash?: string;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
   soundEnabled,
   onToggleSound,
   playClickSound,
+  currentRoute = '/',
+  onNavigate,
 }) => {
   const [activeSection, setActiveSection] = useState('home');
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const navLinks = [
-    { name: 'HOME', href: '#home', id: 'home' },
-    { name: 'WORK', href: '#work', id: 'work' },
-    { name: 'ABOUT', href: '#about', id: 'about' },
-    { name: 'EXPERIENCE', href: '#experience', id: 'experience' },
-    { name: 'SKILLS', href: '#skills', id: 'skills' },
-    { name: 'CONTACT', href: '#contact', id: 'contact' },
+  const navLinks: NavLinkItem[] = [
+    { name: 'HOME', href: '/', id: 'home', route: '/' },
+    { name: 'WORK', href: '/#work', id: 'work', route: '/', hash: '#work' },
+    { name: 'LEADERSHIP', href: '/#experience', id: 'experience', route: '/', hash: '#experience' },
+    { name: 'CREATOR', href: '/#creator', id: 'creator', route: '/', hash: '#creator' },
+    { name: 'ABOUT', href: '/about', id: 'about', route: '/about' },
+    { name: 'CONTACT', href: '/contact', id: 'contact', route: '/contact' },
   ];
 
-  // Track scroll position & active section
+  // Track scroll position & active page/section
   useEffect(() => {
+    if (currentRoute === '/about') {
+      setActiveSection('about');
+    } else if (currentRoute === '/contact') {
+      setActiveSection('contact');
+    } else {
+      setActiveSection('home');
+    }
+
     const handleScroll = () => {
       setScrolled(window.scrollY > 40);
 
-      const sections = ['home', 'work', 'about', 'experience', 'skills', 'contact'];
+      if (currentRoute !== '/') {
+        return;
+      }
+
+      const sections = ['home', 'brands', 'work', 'experience', 'creator', 'institutional', 'social', 'about', 'skills', 'contact'];
       const scrollPos = window.scrollY + 200;
 
       for (const sectionId of sections) {
@@ -47,14 +73,31 @@ export const Navbar: React.FC<NavbarProps> = ({
       }
     };
 
+    handleScroll();
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [currentRoute]);
 
-  const handleLinkClick = (id: string) => {
+  const handleLinkClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    id: string,
+    route: AppRoute,
+    hash?: string
+  ) => {
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) {
+      return;
+    }
+    e.preventDefault();
     playClickSound?.();
     setActiveSection(id);
     setMobileMenuOpen(false);
+    if (onNavigate) {
+      onNavigate(route, hash);
+    } else if (hash) {
+      window.location.href = `${route}${hash}`;
+    } else {
+      window.location.href = route;
+    }
   };
 
   return (
@@ -65,37 +108,56 @@ export const Navbar: React.FC<NavbarProps> = ({
         }`}
       >
         <div className="max-w-7xl mx-auto">
-          <nav className="glass-panel rounded-full px-4 sm:px-6 py-2.5 sm:py-3 flex items-center justify-between shadow-xs border border-[#DCCBFA]/70 transition-all duration-300">
-            {/* Left: Brand Identity */}
+          <nav
+            aria-label="Primary navigation"
+            className="glass-panel rounded-full px-4 sm:px-6 py-2.5 sm:py-3 flex items-center justify-between shadow-xs border border-[#DCCBFA]/70 transition-all duration-300"
+          >
+            {/* Left: Brand Identity with Official CP Logo */}
             <a
-              href="#home"
-              onClick={() => handleLinkClick('home')}
-              className="flex items-center gap-2.5 group cursor-pointer"
+              href="/"
+              onClick={(e) => handleLinkClick(e, 'home', '/')}
+              className="flex items-center gap-2.5 sm:gap-3 group cursor-pointer"
               data-cursor="HOME"
             >
-              <div className="w-8 h-8 rounded-full bg-[#17151D] flex items-center justify-center text-white text-xs font-mono font-bold group-hover:scale-105 transition-transform duration-200">
-                <span className="text-[#DCCBFA]">P</span>
+              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#17151B] border border-[#C9A45C]/60 p-1 flex items-center justify-center overflow-hidden shadow-xs group-hover:border-[#C9A45C] group-hover:scale-105 transition-all duration-300 shrink-0">
+                <img
+                  src="/images/logo/logo.jpg"
+                  alt="MR. PAVAN CREATION Official Logo"
+                  className="w-full h-full object-contain scale-[1.35] filter drop-shadow-[0_2px_6px_rgba(201,164,92,0.4)]"
+                />
               </div>
               <div className="flex flex-col">
-                <span className="font-display font-bold tracking-wider text-xs sm:text-sm text-[#17151D] flex items-center gap-1.5">
+                <span className="font-display font-bold tracking-wider text-xs sm:text-sm text-[#17151B] flex items-center gap-1.5 whitespace-nowrap">
                   MR. PAVAN CREATION
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#A88BEA] animate-pulse" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#C9A45C] animate-pulse shrink-0" />
                 </span>
-                <span className="text-[9px] font-mono tracking-widest text-[#77717F] -mt-0.5 hidden xs:block">
+                <span className="text-[9px] font-mono tracking-widest text-[#77717F] -mt-0.5 hidden sm:block whitespace-nowrap">
                   VIDEO EDITOR & STORYTELLER
                 </span>
               </div>
             </a>
 
             {/* Desktop Navigation Links */}
-            <div className="hidden md:flex items-center gap-1 lg:gap-2">
+            <div className="hidden lg:flex items-center gap-1 xl:gap-2">
               {navLinks.map((link) => {
-                const isActive = activeSection === link.id;
+                const isActive =
+                  currentRoute === '/about'
+                    ? link.id === 'about'
+                    : currentRoute === '/contact'
+                    ? link.id === 'contact'
+                    : activeSection === link.id;
                 return (
                   <a
                     key={link.name}
                     href={link.href}
-                    onClick={() => handleLinkClick(link.id)}
+                    onClick={(e) => handleLinkClick(e, link.id, link.route, link.hash)}
+                    aria-current={
+                      (link.route === '/about' && currentRoute === '/about') ||
+                      (link.route === '/contact' && currentRoute === '/contact') ||
+                      (link.id === 'home' && currentRoute === '/' && activeSection === 'home')
+                        ? 'page'
+                        : undefined
+                    }
                     data-cursor={link.name}
                     className={`relative px-3.5 py-1.5 text-xs font-mono tracking-wider transition-colors duration-200 rounded-full ${
                       isActive
@@ -120,12 +182,14 @@ export const Navbar: React.FC<NavbarProps> = ({
             <div className="flex items-center gap-2 sm:gap-3">
               {/* Sound Toggle */}
               <button
+                type="button"
                 onClick={() => {
                   onToggleSound();
                   playClickSound?.();
                 }}
                 className="w-8 h-8 rounded-full flex items-center justify-center text-[#77717F] hover:text-[#17151D] hover:bg-[#EAE0FF] transition-colors border border-transparent hover:border-[#DCCBFA]"
                 title={soundEnabled ? 'Mute ambient SFX' : 'Enable ambient SFX'}
+                aria-label={soundEnabled ? 'Mute ambient SFX' : 'Enable ambient SFX'}
                 data-cursor="SOUND"
               >
                 {soundEnabled ? (
@@ -137,23 +201,25 @@ export const Navbar: React.FC<NavbarProps> = ({
 
               {/* Direct Let's Collaborate CTA */}
               <a
-                href="#contact"
-                onClick={() => handleLinkClick('contact')}
-                className="hidden sm:inline-flex items-center gap-1.5 text-xs font-mono font-medium tracking-wide bg-[#17151D] text-[#F5F0FA] px-4 py-2 rounded-full hover:bg-[#6C41CE] transition-all duration-300 group shadow-xs"
+                href="/contact"
+                onClick={(e) => handleLinkClick(e, 'contact', '/contact')}
+                className="hidden sm:inline-flex items-center gap-1.5 text-xs font-mono font-medium tracking-wide bg-[#17151D] text-[#F5F0FA] px-4 py-2 rounded-full hover:bg-[#6C41CE] transition-all duration-300 group shadow-xs whitespace-nowrap shrink-0"
                 data-cursor="HIRE"
               >
                 <span>LET'S TALK</span>
                 <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </a>
 
-              {/* Mobile Menu Hamburger */}
+              {/* Mobile / Tablet Menu Hamburger */}
               <button
+                type="button"
                 onClick={() => {
                   setMobileMenuOpen(!mobileMenuOpen);
                   playClickSound?.();
                 }}
-                className="md:hidden w-9 h-9 rounded-full flex items-center justify-center text-[#17151D] bg-[#EAE0FF]/80 hover:bg-[#DCCBFA] transition-colors border border-[#DCCBFA]"
+                className="lg:hidden w-9 h-9 rounded-full flex items-center justify-center text-[#17151D] bg-[#EAE0FF]/80 hover:bg-[#DCCBFA] transition-colors border border-[#DCCBFA] shrink-0"
                 aria-label="Toggle navigation menu"
+                aria-expanded={mobileMenuOpen}
               >
                 {mobileMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
               </button>
@@ -162,7 +228,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         </div>
       </header>
 
-      {/* Mobile Navigation Drawer */}
+      {/* Mobile / Tablet Navigation Drawer */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
@@ -170,30 +236,38 @@ export const Navbar: React.FC<NavbarProps> = ({
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.25 }}
-            className="fixed inset-x-4 top-20 z-40 md:hidden glass-panel rounded-2xl p-6 shadow-xl border border-[#DCCBFA]"
+            className="fixed inset-x-4 top-20 z-40 lg:hidden glass-panel rounded-2xl p-6 shadow-xl border border-[#DCCBFA]"
           >
             <div className="flex flex-col gap-3">
-              {navLinks.map((link, idx) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  onClick={() => handleLinkClick(link.id)}
-                  className={`flex items-center justify-between py-2.5 px-3 rounded-lg text-sm font-mono tracking-wider transition-colors ${
-                    activeSection === link.id
-                      ? 'bg-[#EAE0FF] text-[#17151D] font-bold'
-                      : 'text-[#77717F] hover:bg-white/60 hover:text-[#17151D]'
-                  }`}
-                >
-                  <span>{link.name}</span>
-                  <span className="text-[10px] text-[#A88BEA]">0{idx + 1}</span>
-                </a>
-              ))}
+              {navLinks.map((link, idx) => {
+                const isActive =
+                  currentRoute === '/about'
+                    ? link.id === 'about'
+                    : currentRoute === '/contact'
+                    ? link.id === 'contact'
+                    : activeSection === link.id;
+                return (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    onClick={(e) => handleLinkClick(e, link.id, link.route, link.hash)}
+                    className={`flex items-center justify-between py-2.5 px-3 rounded-lg text-sm font-mono tracking-wider transition-colors ${
+                      isActive
+                        ? 'bg-[#EAE0FF] text-[#17151D] font-bold'
+                        : 'text-[#77717F] hover:bg-white/60 hover:text-[#17151D]'
+                    }`}
+                  >
+                    <span>{link.name}</span>
+                    <span className="text-[10px] text-[#A88BEA]">0{idx + 1}</span>
+                  </a>
+                );
+              })}
 
               <div className="pt-3 border-t border-[#DCCBFA]/60 flex items-center justify-between">
                 <span className="text-xs font-mono text-[#77717F]">PUNE, INDIA</span>
                 <a
-                  href="#contact"
-                  onClick={() => handleLinkClick('contact')}
+                  href="/contact"
+                  onClick={(e) => handleLinkClick(e, 'contact', '/contact')}
                   className="inline-flex items-center gap-1.5 text-xs font-mono font-medium tracking-wide bg-[#17151D] text-[#F5F0FA] px-4 py-2 rounded-full"
                 >
                   LET'S COLLABORATE

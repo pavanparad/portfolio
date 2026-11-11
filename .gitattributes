@@ -1,0 +1,4 @@
+# Track only >100 MB video files via Git LFS (videos <100 MB use normal Git)
+public/videos/pict-promotional-video.mp4 filter=lfs diff=lfs merge=lfs -text
+public/videos/addiction/addiction-legacy.mp4 filter=lfs diff=lfs merge=lfs -text
+public/videos/pulzion26/pulzion-event-coverage.mp4 filter=lfs diff=lfs merge=lfs -text

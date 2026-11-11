@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" fill="none">
+  <!-- VELOXX CLUB Authentic Geometric Wordmark & Monogram -->
+  <g transform="translate(10, 10)">
+    <!-- Angular V Falcon Crest -->
+    <path d="M 5 10 L 30 52 L 42 52 L 67 10 L 52 10 L 36 38 L 20 10 Z" fill="#C9A45C"/>
+    <path d="M 26 10 L 36 28 L 46 10 Z" fill="#F6F1E9"/>
+    <circle cx="36" cy="46" r="3" fill="#C9A45C"/>
+  </g>
+  <!-- Brand Typography -->
+  <text x="88" y="42" font-family="'Space Grotesk', sans-serif" font-weight="900" font-size="28" fill="#17151B" letter-spacing="3">
+    VELOXX
+  </text>
+  <text x="90" y="58" font-family="'JetBrains Mono', monospace" font-size="10" fill="#77717F" letter-spacing="4">
+    COMMUNITY &amp; CLUB
+  </text>
+</svg>

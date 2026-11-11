@@ -9,11 +9,11 @@ export default {
       colors: {
         background: '#F5F0FA',
         lavender: {
-          DEFAULT: '#DCCBFA',
+          DEFAULT: '#DCCCF5',
           50: '#FAF7FD',
           100: '#F5F0FA',
           200: '#EAE0FF',
-          300: '#DCCBFA',
+          300: '#DCCCF5',
           400: '#C4A7FF',
           500: '#A88BEA',
           600: '#8964DE',
@@ -21,8 +21,15 @@ export default {
           800: '#4D25A8',
           900: '#2C1368',
         },
+        charcoal: '#17151B',
+        gold: {
+          DEFAULT: '#C9A45C',
+          light: '#DFC8A4',
+          dark: '#9E7E3C',
+        },
+        ivory: '#F6F1E9',
         dark: {
-          DEFAULT: '#17151D',
+          DEFAULT: '#17151B',
           muted: '#272332',
           card: '#1F1B2A',
         },

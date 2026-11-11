@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <!-- ADDICTION'26 Festival Prism Flame Logo Mark -->
+  <circle cx="50" cy="50" r="46" stroke="#6C41CE" stroke-width="2" stroke-dasharray="4 4" opacity="0.5"/>
+  <circle cx="50" cy="50" r="38" fill="#17151B" stroke="#C9A45C" stroke-width="1.5"/>
+  <!-- Prism Flame Shapes -->
+  <path d="M 50 20 L 72 74 L 28 74 Z" stroke="#6C41CE" stroke-width="1.5" fill="#6C41CE" fill-opacity="0.2"/>
+  <path d="M 50 32 L 64 68 L 36 68 Z" fill="#C9A45C" opacity="0.85"/>
+  <circle cx="50" cy="52" r="5" fill="#F6F1E9"/>
+</svg>

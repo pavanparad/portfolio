@@ -22,8 +22,8 @@ export const Contact: React.FC<ContactProps> = ({ playClickSound }) => {
   const [submitted, setSubmitted] = useState(false);
 
   const emailAddress = 'mr.pavancreation@gmail.com';
-  const instagramUrl = 'https://www.instagram.com/mr.pavancreation';
-  const linkedinUrl = 'https://www.linkedin.com/in/pavan-creation';
+  const instagramUrl = 'https://www.instagram.com/mr.pavan_creation/';
+  const linkedinUrl = 'https://www.linkedin.com/in/pavanparad';
 
   const handleCopyEmail = () => {
     playClickSound?.();
@@ -121,9 +121,14 @@ export const Contact: React.FC<ContactProps> = ({ playClickSound }) => {
               </span>
 
               <div className="space-y-1">
-                <div className="font-mono text-sm sm:text-base font-bold text-[#17151D] break-all">
+                <a
+                  href={`mailto:${emailAddress}`}
+                  onClick={playClickSound}
+                  className="inline-block font-mono text-sm sm:text-base font-bold text-[#17151D] hover:text-[#6C41CE] transition-colors break-all"
+                  data-cursor="EMAIL"
+                >
                   {emailAddress}
-                </div>
+                </a>
                 <div className="text-xs text-[#77717F]">
                   Typical response time: within 24 hours
                 </div>
@@ -187,10 +192,31 @@ export const Contact: React.FC<ContactProps> = ({ playClickSound }) => {
                     <span className="font-mono text-xs font-bold text-[#17151D]">
                       INSTAGRAM
                     </span>
-                    <span className="text-xs text-[#77717F]">@mr.pavancreation</span>
+                    <span className="text-xs text-[#77717F]">@mr.pavan_creation</span>
                   </div>
                 </div>
                 <ArrowUpRight className="w-4 h-4 text-[#77717F] group-hover:text-[#6C41CE] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              </a>
+
+              {/* Email Button */}
+              <a
+                href={`mailto:${emailAddress}`}
+                onClick={playClickSound}
+                className="w-full flex items-center justify-between p-4 rounded-xl glass-panel border border-[#DCCBFA] hover:border-[#6C41CE] bg-white/70 hover:bg-[#F5F0FA] transition-all group shadow-2xs"
+                data-cursor="EMAIL"
+              >
+                <div className="flex items-center gap-3 min-w-0">
+                  <div className="w-10 h-10 rounded-lg bg-[#EAE0FF] flex items-center justify-center text-[#6C41CE] group-hover:scale-105 transition-transform shrink-0">
+                    <Mail className="w-5 h-5" />
+                  </div>
+                  <div className="flex flex-col text-left min-w-0">
+                    <span className="font-mono text-xs font-bold text-[#17151D]">
+                      EMAIL
+                    </span>
+                    <span className="text-xs text-[#77717F] break-all">{emailAddress}</span>
+                  </div>
+                </div>
+                <ArrowUpRight className="w-4 h-4 text-[#77717F] group-hover:text-[#6C41CE] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform shrink-0" />
               </a>
 
               {/* LinkedIn Button */}
@@ -210,7 +236,7 @@ export const Contact: React.FC<ContactProps> = ({ playClickSound }) => {
                     <span className="font-mono text-xs font-bold text-[#17151D]">
                       LINKEDIN
                     </span>
-                    <span className="text-xs text-[#77717F]">Professional Network Profile</span>
+                    <span className="text-xs text-[#77717F]">linkedin.com/in/pavanparad</span>
                   </div>
                 </div>
                 <ArrowUpRight className="w-4 h-4 text-[#77717F] group-hover:text-[#6C41CE] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
